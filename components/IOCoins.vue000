@@ -1,0 +1,74 @@
+<template>
+  <section class="ioc">
+
+
+<div id="isocoins">
+<div>
+  <div id="root_isotope" class="isoDefault">
+        <isotope :options='getOptions()' :coins='coins' @filter="filterOption=arguments[0]" @sort="sortOption=arguments[0]">
+  <div v-for="coin in coins" :key="coin.slug">
+    {{coin.name}}
+  </div>
+</isotope>
+ 
+    
+  </div>
+</div>
+
+<div id="change">
+  <button @click="add">Add</button>
+  <button @click="replace">Replace</button>
+</div>
+<div id="filter">
+  <div>
+    <input type="text" v-model="filterText" placeholder="no filter">
+    <button :class="[filterOption==='filterByText' ? 'is-checked' : '']" @click="filter('filterByText')">Filter</button>
+  </div>
+  <button :class="[filterOption==='isEven' ? 'is-checked' : '']" @click="filter('isEven')">Filter Even</button>
+  <button :class="[filterOption==='isOdd' ? 'is-checked' : '']" @click="filter('isOdd')">Filter Odd</button>
+  <button @click="filter()">Unfilter</button>
+</div>
+<div id="sort">
+  <button :class="[sortOption==='name' ? 'is-checked' : '']" @click="sort('name')">Sort by name</button>
+  <button :class="[sortOption==='id' ? 'is-checked' : '']" @click="sort('id')">Sort by id</button>
+  <button @click="shuttle">Shuttle</button>
+</div>
+<div>
+  <div v-if="selected" class="item">
+    <input type="text" name="" v-model="selected.name">
+    <br>
+    <input type="text" name="" v-model="selected.id">
+  </div>
+</div>
+</div>
+
+
+
+
+
+  </section>
+</template>
+
+
+
+<script>
+
+import isotope from 'vueisotope'
+
+export default {
+    components: {
+    isotope,
+    },
+  async asyncData () {
+    let { data } = await axios.get('http://com-http.us/json/index/coins.json')
+var isotope = require('isocoins')
+
+return { coins: data.coins, isotope:isotope }
+  }
+}
+
+
+
+</script>
+
+

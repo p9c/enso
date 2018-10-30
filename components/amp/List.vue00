@@ -1,0 +1,25 @@
+<template>
+xxxxxxxxxxxxxxx
+</template>
+
+
+<script>
+
+import AmpTemplate from '@/components/amp/AmpTemplate.js'
+export default {
+  components: {
+    AmpTemplate,
+  },
+
+    props: {
+    coin: String,
+    slug:String,
+    name:String
+  },
+    async asyncData () {
+    var xxxxxx = '<template type="amp-mustache" id="list"><table><tbody><tr><td>Blocks:</td><td>{{ blocks }}</td></tr><tr><td>Difficulty:</td><td>{{difficulty}}</td></tr><tr><td>MemPool Tx:</td><td>{{pooledtx}}</td></tr></tbody></table></template>'
+    return { xxxxxx:xxxxxxx }
+  }
+}
+</script>
+

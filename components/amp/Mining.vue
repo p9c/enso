@@ -1,0 +1,24 @@
+<template>
+<div class="pnl ">
+<amp-list :id="slug+ '-list'" height="64" layout="fixed-height" :src="'//' + slug +'.com-http.us/a/mining'" items="d" single-item class="cgl" v-html='`<template type="amp-mustache"><table><tbody><tr><td>Blocks:</td><td>{{ blocks }}</td></tr><tr><td>Difficulty:</td><td>{{difficulty}}</td></tr><tr><td>MemPool Tx:</td><td>{{pooledtx}}</td></tr></tbody></table></template>`'></amp-list>
+</div>
+</template>
+<script>
+
+import AmpTemplate from '@/components/amp/AmpTemplate.js'
+export default {
+  components: {
+    AmpTemplate,
+  },
+
+    props: {
+    slug:String
+  }
+}
+</script>
+
+
+
+
+
+
