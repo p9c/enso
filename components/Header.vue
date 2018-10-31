@@ -5,19 +5,21 @@
       :slug="slug"      
       :name="name" />
         <Navigation />
- 
-  </header>
+        <Search />
+   </header>
 </template>
 
 
 <script>
 
 import Title from '@/components/amp/Title.vue'
+import Search from '@/components/Search.vue'
 import Navigation from '@/components/Navigation.vue'
 
 export default {
   components: {
     Title,
+    Search,
     Navigation
   },
     props: {

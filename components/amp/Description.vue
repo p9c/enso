@@ -1,5 +1,5 @@
 <template>
-<div class="pnl "><h3>{{name}} Description</h3>
+<div class="pnl pnlbg"><h3>{{name}} Description</h3>
 <div class="cnt " v-html="cdata.desc"></div>
 </div>
 </template>

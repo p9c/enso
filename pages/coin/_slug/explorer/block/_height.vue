@@ -1,23 +1,34 @@
 <template>
-<section class="lyt block">
+<div class="scs">
+  <Header
+      :page="coin.name + `Block Height`"
+      :slug="coin.slug"      
+      :name="coin.name" />
+ <main class="scr lyt lrw block main">
   <!-- <section class="block"><article class="pnl big"><h1>{{ name }} Block {{ block.hash}}</h1> -->
-<Title
+<amp-img :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128px" height="128px" layout="fixed"  class="pbg"><noscript><img  :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128" height="128"></noscript></amp-img>
+ <Block 
       :slug="slug"
-      :name="name"
-      :page="`Block Height ` + height"  />
-<Block 
       type="block"
-      :slug="slug"
-      :value="height"  />
+      :value="height"  /> 
+
 
  <!-- <nuxt-link class="button" to="/">Coins</nuxt-link> -->
-  </section>
+
+
+     
+<Aside :slug="slug" :name="name" />
+     
+     </main>
+  <Footer /></div>
 </template>
 
 
 <script>
 import axios from '@/plugins/axios'
-import Title from '@/components/amp/Title.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import Aside from '@/components/Aside.vue'
 import Block from '@/components/amp/Block.vue'
 import AmpTemplate from '@/components/amp/AmpTemplate.js'
 
@@ -26,20 +37,19 @@ export default {
   name: 'height',
       components: {
 AmpTemplate,
-Title,
+Header,
+Footer,
+Aside,
     Block
   },
       async asyncData ({ params, error }) {
    let { data } = await axios.get('http://com-http.us/json/coins/' + params.slug + '.json')
     var coin = data.coin
-//console.log(params)
+  //console.log(params)
 
     return { coin:coin, name:coin.name, slug: params.slug, height: params.height }
   
   },
-//     let { bdata } = await axios.get('http://' + slug + '.com-http.us/a/blockhash/' + params.hash)
-//     var block = bdata.d
-// return {block:block}
 props: {
     //coin: Array,
     //slug:String,

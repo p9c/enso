@@ -1,8 +1,29 @@
 <template>
-<div class="pnl "><h3>Last Transactions</h3>
+<article class="pnl dbl pnlbg"><h3>Transaction</h3>
 <div class="cnt ">
-  <amp-list width="auto"  height="542"  layout="flex-item" :src="'//'+slug+ '.com-http.us/a/rawpool'" items="d" class="cgl" v-html='`<template type="amp-mustache" id="coin-tx"><a href="/coins/`+slug+`/explorer/tx/{{.}}">"{{.}}"</a></template>`'></amp-list>
-</div></div>
+  <amp-list width="600"  height="600" layout="responsive" :src="`//` + slug + `.com-http.us/a/tx/` + txid" items="d" single-item class="cgl" v-html='`<template type="amp-mustache">			
+	<table class="table table-hover"><tbody>
+{{#blockhash}}<tr><td ><strong>Block hash</strong></td><td><a href="/explorer/hash/{{blockhash}}">{{blockhash}}</a></td></tr>{{/blockhash}}
+{{#blocktime}}<tr><td ><strong>Block time</strong></td><td>{{blocktime}}</td></tr>{{/blocktime}}
+{{#confirmations}}<tr><td ><strong>Confirmations</strong></td><td>{{confirmations}}</td></tr>{{/confirmations}}
+{{#hex}}<tr><td ><strong>Hex</strong></td><td><small>{{hex}}</small></td></tr>{{/hex}}
+{{#locktime}}<tr><td ><strong>Locktime</strong></td><td>{{locktime}}</td></tr>{{/locktime}}
+{{#time}}<tr><td ><strong>Time</strong></td><td>{{time}}</td></tr>{{/time}}
+{{#txid}}<tr><td ><strong>TXid</strong></td><td>{{txid}}</td></tr>{{/txid}}
+{{#version}}<tr><td ><strong>Version</strong></td><td>{{version}}</td></tr>{{/version}}
+{{#vin}}<tr> <td ><strong>Value in</strong></td><td>{{#vin}}{{#coinbase}}<strong>Coinbase: </strong><small>{{coinbase}}</small><br>{{/coinbase}}{{#sequence}}<strong>Sequence: </strong>{{sequence}}{{/sequence}}{{/vin}}</td></tr>{{/vin}}
+{{#vout}}<tr><td ><strong>Value out</strong></td><td>{{#vout}}{{#n}}<strong>N: </strong>{{n}} {{/n}}<br>
+{{#scriptPubKey}}{{#addresses}}<strong>Addresses: </strong><a href="/explorer/addr/{{.}}">{{.}}</a> {{/addresses}}<br>
+{{#asm}}<strong>ASM: </strong><small>{{asm}}</small>{{/asm}}<br>
+{{#hex}}<strong>hex: </strong>{{hex}} {{/hex}}<br>
+{{#reqSigs}}<strong>ReqSigs: </strong>{{reqSigs}} {{/reqSigs}}<br>
+{{#type}}<strong>Type: </strong>{{type}} {{/type}}<br>
+{{/scriptPubKey}}<hr>
+{{#value}}<strong>Value: </strong>{{value}} {{/value}}<br>{{/vout}}</td></tr>{{/vout}}
+</tbody>
+</table>
+  </template>`'></amp-list>
+</div></article>
 </template>
 
 
@@ -14,7 +35,9 @@ export default {
     AmpTemplate,
   },
     props: {
-    slug:String
+    slug:String,
+    name:String,
+    txid:String
   }
 }
 </script>

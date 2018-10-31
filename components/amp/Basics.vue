@@ -1,5 +1,5 @@
 <template>
-<div class="pnl "><h3>{{name}} Basics</h3>
+<div class="pnl pnlbg"><h3>{{name}} Basics</h3>
 <div class="cnt " id="coin-basics"><table><tbody>
 <tr><td>Algorithm</td><td>{{algo}}</td></tr>
 <tr><td>Total Coin Supply</td><td>{{cdata.total}}</td></tr>

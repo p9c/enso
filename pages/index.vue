@@ -1,5 +1,7 @@
 <template>
-<div class="scs"><Header />
+<div class="scs">
+    <Header
+      page="Beyond BlockChain" />
  <main class="scr main">
    <section class="lyt lrw index">
 <Bitnodes  :bitnodes="bitnodes"  />
