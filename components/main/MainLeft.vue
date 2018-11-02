@@ -33,7 +33,7 @@ export default {
     name:String,
     symbol:String,
     algo:String,
-     cdata:String,
+     cdata:Object,
     }
 }
 </script>

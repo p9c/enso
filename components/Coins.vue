@@ -24,7 +24,7 @@ export default {
     axios
   },
   async asyncData () {
-    let { data } = await axios.get('http://com-http.us/json/index/coins.json')
+    let { data } = await axios.get('https://com-http.us/json/index/coins.json')
   return { coins: data.coins }
   },
 }

@@ -1191,6 +1191,8 @@ flex: 1 0 auto;
 
   .coins .coin{
 flex: 0 0 40px;
+justify-content: center;
+align-items: center;
   }
 
 
