@@ -42,7 +42,7 @@ Aside,
     var coin = data.coin
   //console.log(params)
 
-    return { coin:coin, name:coin.name, slug: params.slug, txid: params.txid }
+    return { name:coin.name, slug: params.slug, txid: params.txid }
   
   },
 props: {

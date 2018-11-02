@@ -1,8 +1,9 @@
 <template>
-<div class="pnl pnlbg"><h3>{{name}} Peers</h3>
- <div class="cnt ">
+<div class="pnl pnlbg fcl fii ftw"><h3>{{name}} Peers</h3>
+ <div class="cnt peers">
   <amp-list  id="coin-peers"  layout="flex-item"  :src="'//' + slug + '.com-http.us/a/peer'"  items= "d"  class="m1" v-html='`<template type="amp-mustache"   id="coin-peers">
-{{#addr}}<div class="peers"><h5>{{addr}}</h5>
+      {{#addr}}<section>
+        <h6>{{addr}}</h6>
 <table class="table table-hover"><tbody>
 {{#addr}}<tr><td ><strong>Addr</strong></td><td>{{addr}}</td></tr>{{/addr}}
 {{#addrloca}}<tr><td ><strong>Addrloca</strong></td><td>{{addrloca}}</td></tr>{{/addrloca}}
@@ -22,9 +23,12 @@
 {{#synced_headers}}<tr><td ><strong>Synced headers</strong></td><td>{{synced_headers}}</td></tr>{{/synced_headers}}
 {{#version}}<tr><td ><strong>Version</strong></td><td>{{version}}</td></tr>{{/version}}
 {{#whitelisted}}<tr><td ><strong>Whitelisted</strong></td><td>{{whitelisted}}</td></tr>{{/whitelisted}}
-</tbody></table></div>{{/addr}}</template>`'></amp-list></div></div>
+</tbody></table>
+      </section>
+      {{/addr}}
+</template>`'></amp-list></div></div>
 </template>
-  
+
 <script>
 import axios from '@/plugins/axios'
 import AmpTemplate from '@/components/amp/AmpTemplate.js'

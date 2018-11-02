@@ -1,13 +1,10 @@
 <template>
 <div class="scs">
-    <Header
-      page="Beyond BlockChain" />
- <main class="scr main">
-   <section class="lyt lrw index">
+    <Header page="Beyond BlockChain" />
+ <main class="scr fcl main"><section class="lyt fcl index">
 <Bitnodes  :bitnodes="bitnodes"  />
 <Coins  />
-     </section>
-     </main>
+     </section></main>
   <Footer /></div>
 </template>
 

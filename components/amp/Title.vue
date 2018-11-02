@@ -1,8 +1,8 @@
 <template>
 <div class="pnl dbl pha lyt lrw">
-  <amp-img :src="'//i.com-http.us/' +slug+ '/64'" :alt="name"  width="64px" height="64px" layout="fixed"  class="nic">
-  <noscript><img :src="'//i.com-http.us/' +slug+ '/64'" width="64" height="64" :alt="name"></noscript></amp-img>
-<h1><amp-fit-text height="64px" width="240px" layout="flex-item" min-font-size="32"> <a :href="'//' +slug+ '.com-http.us/'">{{name}}</a>  {{page}}</amp-fit-text></h1>
+  <amp-img :src="'//i.com-http.us/' +slug+ '/32'" :alt="name"  width="32px" height="32px" layout="fixed"  class="nic">
+  <noscript><img :src="'//i.com-http.us/' +slug+ '/32'" width="32" height="32" :alt="name"></noscript></amp-img>
+<h1><amp-fit-text height="40px" width="240px" layout="flex-item" min-font-size="32"> <a :href="'//' +slug+ '.com-http.us/'">{{name}}</a>  {{page}}</amp-fit-text></h1>
 </div>
 </template>
 

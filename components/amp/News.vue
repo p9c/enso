@@ -1,5 +1,5 @@
 <template>
-<div class="pnl pnlbg"><h3>{{name}} News</h3>
+<div class="pnl fcl pnlbg fii dbl"><h3>{{name}} News</h3>
  <div class="cnt ">
   <amp-list  id="coin-news"  layout="flex-item"  :src="'//' + slug + '.com-http.us/a/news'"  items= "news"  class="m1" v-html='`<template type="amp-mustache"   id="coin-news"><div class="nws">
     <amp-img src="//i.com-http.us/` + slug + `/16" alt="{{.Coin.Name}}"  width="16"  height="16"  layout="fixed"  class="nico"></amp-img>
@@ -22,10 +22,5 @@ export default {
     slug:String,
     name:String
     },
-  async asyncData () {
-   let { data } = await axios.get('http://' + slug + '.com-http.us/a/news')
-    return { news:data.news }
-
-  }
 }
 </script>

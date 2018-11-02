@@ -1,5 +1,5 @@
 <template>
-  <header class="scr hds">
+  <header class="scr hds frw">
  <Title
       page="BlockChain Explorer"
       :slug="slug"      

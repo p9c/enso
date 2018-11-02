@@ -4,7 +4,8 @@
       :page="coin.name + `Block Height`"
       :slug="coin.slug"      
       :name="coin.name" />
- <main class="scr lyt lrw block main">
+ <main class="scr lyt lrw block main"><amp-state id="blockHeight" v-html='`{ "blockHeight": "`+ height + `" }`'></amp-state>
+
   <!-- <section class="block"><article class="pnl big"><h1>{{ name }} Block {{ block.hash}}</h1> -->
 <amp-img :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128px" height="128px" layout="fixed"  class="pbg"><noscript><img  :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128" height="128"></noscript></amp-img>
  <Block 

@@ -8,7 +8,7 @@
   <!-- <section class="block"><article class="pnl big"><h1>{{ name }} Block {{ block.hash}}</h1> -->
 <amp-img :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128px" height="128px" layout="fixed"  class="pbg">
 <noscript><img  :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128" height="128"></noscript></amp-img>
- <Addr :slug="slug"  /> 
+ <Addr :slug="slug" :addr="addr"  /> 
 
 
  <!-- <nuxt-link class="button" to="/">Coins</nuxt-link> -->

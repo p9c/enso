@@ -1,5 +1,5 @@
 <template>
-<div class="pnl pnlbg">
+<div class="pnl fcl pnlbg">
   <h3>{{name}} Links</h3>
   <div class="cnt ">
   <form method="get" target="_blank" :action="'https://isthiscoinascam.com/check/' + slug">

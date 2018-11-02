@@ -1,11 +1,11 @@
 <template>
   <section class="lyt lrw">
     
-<article v-for="(coin, slug) in bitnodes" :key="slug" class="pnl pnlbg bitnode">
+<article v-for="(coin, slug) in bitnodes" :key="slug" class="pnl pnlbg fcl bitnode">
   <header>
     <figure><amp-img layout="fixed" :src="'//i.com-http.us/' +coin.slug+  '/32'" width="32px" height="32px" :alt="coin.name"/></figure>
       <h2>
-        <nuxt-link :name="coin.name" :slug="coin.slug" :to="slug"  ><amp-fit-text height="32px" layout="flex-item" min-font-size="20px">{{coin.name}}🚀</amp-fit-text></nuxt-link>
+        <nuxt-link :name="coin.name" :slug="coin.slug" :to="'//' +coin.slug+  '.com-http.us/'"   ><amp-fit-text height="32px" layout="flex-item" min-font-size="20px">{{coin.name}}🚀</amp-fit-text></nuxt-link>
         </h2>
   </header>
   <amp-live-list :id="coin.slug+ '-live'" data-poll-interval="15000" data-max-items-per-page="20">
@@ -14,9 +14,11 @@
      <Mining :slug="coin.slug" /> 
         </div></div>
       </amp-live-list>
-<footer>
-  <a :href="'//'+coin.slug+ '.com-http.us/explorer'"><button class="btn">Explorer</button></a>
-  <a  :href="'//'+coin.slug+ '.com-http.us/'"><button class="btn">Info</button></a>
+<footer class="fcl">
+  <ul class="sts">
+    <li><a :href="'//'+coin.slug+ '.com-http.us/explorer'" class="blue">Explorer</a></li>
+  <li><a  :href="'//'+coin.slug+ '.com-http.us/'" class="light-blue">Info</a></li>
+  </ul>
   </footer>
   </article>
   </section>

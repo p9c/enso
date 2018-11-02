@@ -1,38 +1,31 @@
 <template>
- <article class="lyt pnl qdl qdh pnlbg">
-   <h3>Last {{ name }} Blocks</h3>
-  <div class="cnt ">
-   <ul class="blcks">
-     <li>Height</li>
-   <li class="hsh">Hash</li>
-   <li>Difficulty</li>
-   <li>Confirmations</li>
-   <li class="txs">Transactions</li>
-   <li >Time</li>
-   </ul>
-     <amp-list  id="last-blocks" layout="flex-item" :src="'//' + slug + '.com-http.us/a/last'" items="d" class="cgl" v-html='`<template type="amp-mustache"><ul class="blck">
-     {{#height}}<li><a href="/explorer/block/{{height}}">{{height}}</a></li>{{/height}}
-     {{#hash}}<li class="hash"><a href="/explorer/hash/{{hash}}">{{hash}}</a></li>{{/hash}}
-     {{#difficulty}}<li>{{difficulty}}</li>{{/difficulty}}
-     {{#confirmations}}<li>{{confirmations}}</li>{{/confirmations}}
-     <li class="txs popover popover-left"><button>Txs</button>
-     <ul class="popover-container txc">{{#tx}}<li><a href="/explorer/tx/{{.}}">{{.}}</a></li>{{/tx}}</ul></li>
-     {{#time}}<li>{{time}}</li>{{/time}}
-     </ul></template>`'></amp-list></div></article> 
+ <div id="blocks" class="lyt pnl fcl fhh pnlbg">
+
+
+<BlockHeight :slug="slug" :lastblock="lastblock"/>
+       <Block :slug="slug" :lastblock="lastblock"/>
+  
+        </div> 
 </template>
 
   
 <script>
 
 import AmpTemplate from '@/components/amp/AmpTemplate.js'
+import Block from '~/components/amp/Block.vue'
+import BlockHeight from '@/components/amp/BlockHeight.vue'
+
+
 export default {
   components: {
-    AmpTemplate,
+      AmpTemplate,
+   BlockHeight,
+    Block
   },
-
     props: {
     slug:String,
-    name:String
-    }
+    name:String,
+    lastblock:Number
+  },
 }
 </script>

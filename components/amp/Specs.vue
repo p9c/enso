@@ -1,7 +1,23 @@
 <template>
-<div class="pnl pnlbg"><h3>{{name}} Specifications</h3>
+<div class="pnl pnlbg fooa fcl"><h3>{{name}} Specifications</h3>
 <div class="cnt ">
-<amp-list id="coin-spec" height="110px" layout="flex-item"  :src="'//com-http.us/json/coins/'+slug+ '.json'"  items="coin" single-item class="m1" v-html='`<template type="amp-mustache"  id="coin-spec"><table><tbody><tr><td>Name</td><td>{{name}}</td></tr><tr><td>Symbol</td><td>{{symbol}}</td></tr><tr><td>Start Date</td><td>{{cdata.start}}</td></tr><tr><td>Twitter</td><td>{{cdata.tw}}</td></tr><tr><td>Website Url</td><td>{{cdata.web}}</td></tr></tbody></table></template>`'></amp-list>
+
+
+<table>
+<tbody>
+  <tr><td>Name</td><td>{{name}}</td></tr>
+  <tr><td>Symbol</td><td>{{symbol}}</td></tr>
+  <tr><td>Start Date</td><td>{{cdata.start}}</td></tr>
+  <tr><td>Twitter</td><td>{{cdata.tw}}</td></tr>
+  <tr><td>Website Url</td><td>{{cdata.web}}</td></tr>
+
+<tr><td>Algorithm</td><td>{{algo}}</td></tr>
+<tr><td>Total Coin Supply</td><td>{{cdata.total}}</td></tr>
+<tr><td>Difficulty Adjustment</td><td>{{cdata.diff}}</td></tr>
+<tr><td>Block Reward Reduction</td><td>{{cdata.rew}}</td></tr>
+<tr><td>Proof Type</td><td>{{cdata.proof}}</td></tr>
+</tbody></table>
+
 </div></div>
 </template>
       
@@ -19,7 +35,10 @@ export default {
 
     props: {
     slug:String,
+    algo:String,
     name:String,
+    symbol:String,
+        cdata:Object
   }
 }
 </script>

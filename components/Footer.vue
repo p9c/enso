@@ -1,15 +1,21 @@
 <template>
   <footer class="scr fts">
-    Visit our website for more documentation : <a href="https://marcetin.com" target="_blank">sdsdsd.org</a>
-  </footer>
+    <amp-state id="blockHeight" v-html='`{ "blockHeight": "`+ lastblock + `" }`'></amp-state>
+
+<input type="range" :value="lastblock"  [value]="blockHeight"  min="0" :max="lastblock"  id="blockHeight-input" class="blockheight" on="input-throttled:AMP.setState({
+                                blockHeight: event.value
+                                })">      
+                                
+                                  </footer>
 </template>
 
 
 <script>
 export default {
-    props: {
+       props: {
     slug:String,
-    name:String
-  }
+    name:String,
+    lastblock:Number
+  },
 }
 </script>

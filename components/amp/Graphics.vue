@@ -1,5 +1,5 @@
 <template>
-<div class="pnl pnlbg"><h3>{{name}} Graphics</h3>
+<div class="pnl fcl pnlbg"><h3>{{name}} Graphics</h3>
 <div class="cnt ">
 
  <ul>

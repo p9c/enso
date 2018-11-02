@@ -1,12 +1,19 @@
-<template>
-<div class="pnl pnlbg"><h3>{{name}} Basics</h3>
-<div class="cnt " id="coin-basics"><table><tbody>
-<tr><td>Algorithm</td><td>{{algo}}</td></tr>
-<tr><td>Total Coin Supply</td><td>{{cdata.total}}</td></tr>
-<tr><td>Difficulty Adjustment</td><td>{{cdata.diff}}</td></tr>
-<tr><td>Block Reward Reduction</td><td>{{cdata.rew}}</td></tr>
-<tr><td>Proof Type</td><td>{{cdata.proof}}</td></tr>
-</tbody></table></div></div></template>
+<template><div class="pnl fcl pnlbg">
+  
+  <div class="cnt basics"><figure>
+  <amp-img :src="'//i.com-http.us/' + slug + '/128'" :alt="name"  width="128px" height="128px" layout="fixed"  class="nic">
+  <noscript><img :src="'//i.com-http.us/' +slug+ '/128'" width="128" height="128" :alt="name"></noscript></amp-img></figure>
+<h1><amp-fit-text height="40px" width="240px" layout="flex-item" min-font-size="32"> <a :href="'//' +slug+ '.com-http.us/'">{{name}}</a></amp-fit-text></h1>
+<p class="desc" v-html="cdata.desc" />
+</div>
+
+<ul class="sts">
+  <li><a href="#" class="orange">blocks</a></li>
+  <li class="stm"><a href="#" class="green">transactions</a></li>
+  <li><a href="#" class="red">price</a></li>
+  </ul>
+
+</div></template>
 
 <script>
 
@@ -17,6 +24,7 @@ export default {
   },
 
     props: {
+      slug:String,
     name:String,
     cdata:Object
       }
