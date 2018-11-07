@@ -1,17 +1,18 @@
 <template>
 <div class="scs">
+  1111111111111
   <Header
-      :page="coin.name + `Block Height`"
-      :slug="coin.slug"      
-      :name="coin.name" />
- <main class="scr lyt lrw block main"><amp-state id="blockHeight" v-html='`{ "blockHeight": "`+ height + `" }`'></amp-state>
-
+      :page="name + `Block Height`"
+      :slug="slug"      
+      :name="name" />
+ <main class="scr lyt lrw block main"><amp-state id="blockHeight" v-html='`{ "blockHeight": "`+ evalue + `" }`'></amp-state>
+222222222222
   <!-- <section class="block"><article class="pnl big"><h1>{{ name }} Block {{ block.hash}}</h1> -->
 <amp-img :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128px" height="128px" layout="fixed"  class="pbg"><noscript><img  :src="'//i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128" height="128"></noscript></amp-img>
  <Block 
       :slug="slug"
       type="block"
-      :value="height"  /> 
+      :value="evalue"  /> 
 
 
  <!-- <nuxt-link class="button" to="/">Coins</nuxt-link> -->
@@ -31,35 +32,25 @@ import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import Aside from '@/components/Aside.vue'
 import Block from '@/components/amp/Block.vue'
-import AmpTemplate from '@/components/amp/AmpTemplate.js'
 
 
 export default {
   name: 'height',
       components: {
-AmpTemplate,
 Header,
 Footer,
 Aside,
     Block
   },
-      async asyncData ({ params, error }) {
-   let { data } = await axios.get('http://com-http.us/json/coins/' + params.slug + '.json')
-    var coin = data.coin
-  //console.log(params)
-
-    return { coin:coin, name:coin.name, slug: params.slug, height: params.height }
-  
-  },
 props: {
-    //coin: Array,
-    //slug:String,
-//    height:String,
+   coin: String,
+   slug:String,
+    evalue:String,
 
   },
   head () {
     return {
-      title: `Coin: ${this.name} Block Height: ${this.height} `
+      title: `Coin: ${this.name} Block Height: ${this.evalue} `
     }
   }
 }

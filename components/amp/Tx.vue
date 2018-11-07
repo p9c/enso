@@ -1,5 +1,5 @@
 <template>
-<article class="pnl dbl pnlbg"><h3>Transaction</h3>
+<article class="pnl dbl pnlbg"><h3 class="pnlh">Transaction</h3>
 <div class="cnt ">
   <amp-list width="600"  height="600" layout="responsive" :src="`//` + slug + `.com-http.us/a/tx/` + txid" items="d" single-item class="cgl" v-html='`<template type="amp-mustache">			
 	<table class="table table-hover"><tbody>

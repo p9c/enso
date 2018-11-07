@@ -1,65 +1,88 @@
+const pkg = require('./package')
+
 const modifyHtml = (html) => {
+
+  // TODO: Is this the right way? We need to join the elements as well. Do via WebPack config instead?
   // Add amp-custom tag to added CSS
   html = html.replace(/<style data-vue-ssr/g, '<style amp-custom data-vue-ssr')
+  //html = html.replace(/<style type="text\/css"/g, '<style amp-custom type="text/css"')
+  
+
+  // TODO: Hacky - join multiple adjacent style elements together
+  html = html.replace(/<\/style><style amp-custom[^>]*>/g, '')
+
+  // TODO: Better to throw an error than secretly discard?
   // Remove every script tag from generated HTML
-  html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
-  // Add AMP script before </head>
-  const ampScript = '<script async src="https://cdn.ampproject.org/v0.js"></script>'
+  //html = html.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+  // TODO: HACK. This version tries to get rid of scripts at bottom of file, but not scripts in the <head>.
+  //html = html.replace(/<script type="text\/javascript">window.__NUXT__.*<\/body>/gi, '</body>')
+  // TODO: HACK. This version tries to get rid of scripts at bottom of file, but not scripts in the <head>.
+  html = html.replace(/(?:<script[^>]*>[^<]*<\/script>\s*)+<\/body>/gi, '</body>')
 
-const ampsw = `<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>`
-const amplivelist = `<script async custom-element="amp-live-list" src="https://cdn.ampproject.org/v0/amp-live-list-0.1.js"></script>`
-const amplist = `<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>`
-const ampmustache = `<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>`
-const ampform = `<script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>`
-const ampsidebar = `<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>`
-const ampbind = `<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>`
-const amplightbox = `<script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>`
-const ampselector = `<script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>`
-const ampfittext = `<script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>`
-const ampiframe = `<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>`
-const ampaccordion = `<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>`
-
-html = html.replace('</head>', ampScript + amplivelist+ amplist +ampmustache + ampform +ampsidebar +ampbind +amplightbox +ampselector +ampfittext +ampiframe +ampaccordion +'</head>')
   return html
 }
 
+module.exports = {
 
+  // We want server side rendering.
+  mode: 'universal',
 
-export default {
+  // Headers of the page
   head: {
+    title: pkg.name,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width,minimum-scale=1' }
+      // See app.html for the AMP meta tags.
     ],
     link: [
-      { rel: 'canonical', href: '/' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Ubuntu' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Abel' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Vollkorn' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Vollkorn+SC' }
+      // TODO: { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // TODO: Canonical URL should be "self", whatever the current URL is (not always the root)
+      { rel: 'canonical', href: '/' }, // Wrong!
     ]
   },
-  env: {
-    HOST_URL: process.env.HOST_URL || 'http://com-http.us/'
-  },
-  //css: ['~/assets/main.css'],
-  css: [
-    // Load a Node.js module directly (here it's a Sass file)
-    //'bulma',
-    // CSS file in the project
-    '@/assets/css/main.css',
-    //'@/assets/css/grid.css',
-    //'@/assets/css/typo.css',
-    //'@/assets/css/btn.css',
-    //'@/assets/css/explorer.css',
-    // SCSS file in the project
-    //'@/assets/main.scss'
-  ],
-  loading: false, // Disable loading bar since AMP will not generate a dynamic page
+
+  // Disable loading bar since AMP will not generate a dynamic page.
+  loading: false,
+
   render: {
-    // Disable resourceHints since we don't load any scripts for AMP
+    // Disable resourceHints since we don't laod any scripts for AMP
     resourceHints: false
   },
+
+  // TODO: Delete? We don't want any global CSS.
+  css: [
+  ],
+
+  // Plugins to load before mounting the App
+  plugins: [
+  ],
+
+  // Nuxt.js modules
+  modules: [
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/axios'
+  ],
+
+  // Axios module configuration
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  // Build configuration
+  build: {
+    // You can extend webpack config here
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  },
+
   hooks: {
     // This hook is called before generatic static html files for SPA mode
     'generate:page': (page) => {
@@ -69,5 +92,15 @@ export default {
     'render:route': (url, page, { req, res }) => {
       page.html = modifyHtml(page.html)
     }
-  }
+  },
+
+  serverMiddleware: [
+
+    // Return concerts, filtered by query params.
+    '~/api/concerts.js',
+
+    // Return venues
+    '~/api/venues.js'
+    
+  ]
 }

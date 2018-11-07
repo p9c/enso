@@ -1,9 +1,9 @@
 <template>
- <div id="blocks" class="lyt pnl fcl fhh pnlbg">
+ <div id="blocks" class="flx fcl fii cnt">
 
 
-<BlockHeight :slug="slug" :lastblock="lastblock"/>
-       <Block :slug="slug" :lastblock="lastblock"/>
+<BlockHeight  :slug="slug" :lastblock="lastblock" />
+     <Block  :slug="slug" :symbol="symbol" :name="name" :algo="algo" :lastblock="lastblock" /> 
   
         </div> 
 </template>
@@ -11,21 +11,21 @@
   
 <script>
 
-import AmpTemplate from '@/components/amp/AmpTemplate.js'
 import Block from '~/components/amp/Block.vue'
 import BlockHeight from '@/components/amp/BlockHeight.vue'
 
 
 export default {
   components: {
-      AmpTemplate,
    BlockHeight,
     Block
   },
-    props: {
+        props: {
     slug:String,
+    algo:String,
     name:String,
-    lastblock:Number
-  },
+    symbol:String,
+    lastblock:Number,
+  }
 }
 </script>

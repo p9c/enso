@@ -1,16 +1,26 @@
-# Ensō
+# amp-nuxt-trial
 
-<img align="right" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Enso.svg/400px-Enso.svg.png" title="Ensō" />
+Building up an AMP demo using Nuxt. This is still very much a work in progress (not fully working).
 
-### Ensō
+The main page is currently 'main.vue' which you access via http://localhost:3000/main.
 
-## A ParallelCoin Application
+The main directories of interest are 'pages' and 'components' which are referenced from pages.
 
-Ensō is predSuccessor of Jörmungandr
+## Build Setup
 
+``` bash
+# install dependencies
+$ yarn install
 
-## API 
+# serve with hot reload at localhost:3000
+$ yarn run dev
 
-<a href="https://mm.tt/1105285141?t=SgNVySqFv3">Visual map presentation</a>
+# build for production and launch server
+$ yarn run build
+$ yarn start
 
-## Ensō 
+# generate static project
+$ yarn run generate
+```
+
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

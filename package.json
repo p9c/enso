@@ -1,28 +1,27 @@
 {
   "name": "enso",
   "version": "1.0.0",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "gsap": "^2.0.2",
-    "nuxt": "^2.2.0",
-    "nuxt-edge": "latest",
-    "vueisotope": "^3.1.2"
-  },
+  "description": "Enso Is predSuccessor of Jorm",
+  "author": "Alan Kent",
+  "private": true,
   "scripts": {
     "dev": "nuxt  --port 3553",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.4",
+    "axios": "^0.18.0",
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "bulma": "^0.7.2",
-    "eslint": "^5.8.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-loader": "^1.6.1",
-    "eslint-plugin-html": "^4.0.6",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "node-sass": "^4.9.4",
-    "sass-loader": "^7.1.0"
+    "babel-eslint": "^8.2.1",
+    "cross-env": "^5.0.1",
+    "eslint": "^4.15.0",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-vue": "^4.0.0"
   }
 }

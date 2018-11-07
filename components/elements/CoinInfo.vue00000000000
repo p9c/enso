@@ -1,0 +1,48 @@
+<template>
+  <section class="flx frw fii pnl pnlbg">
+    <slot/>
+  </section>
+</template>
+
+
+<script>
+
+export default {
+  components: {
+    
+  },
+    props: {
+    slug:String,
+    name:String
+  }
+}
+</script>
+
+<style>
+
+/* PANELS */
+
+.pnl{
+margin:10px;
+border-radius: 1px;
+transition: all 55ms ease-in;
+}
+
+
+.pnlbg{
+background: #fcfcfc; /* Old browsers */
+background: -moz-linear-gradient(top, #fcfcfc 62%, #cfcfcf 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #fcfcfc 62%,#cfcfcf 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #fcfcfc 62%,#cfcfcf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#cfcfcf',GradientType=0 ); /* IE6-9 */
+border: 1px solid var(--border-dark);
+box-shadow: inset 1px 0 3px rgba(0,0,0,.9);
+transition: all 55ms ease-in;
+}
+.pnlbg:hover{
+  box-shadow: inset 1px 0 1px rgba(0,0,0,.62);
+  transition: all 33ms ease-in;
+}
+
+
+</style>

@@ -1,6 +1,6 @@
 <template>
 <div class="pnl fcl pnlbg">
-  <h3>{{name}} Links</h3>
+  <h3>{{name}} EcoSystem</h3>
   <div class="cnt ">
   <form method="get" target="_blank" :action="'https://isthiscoinascam.com/check/' + slug">
   <button class="btn btn-primary btn-lg h3" type="submit" >Is {{name}} Scam?</button></form>
@@ -25,5 +25,6 @@ export default {
     
   }
 }
+
 </script>
 

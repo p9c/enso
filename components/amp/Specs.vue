@@ -1,14 +1,14 @@
 <template>
-<div class="pnl pnlbg fooa fcl"><h3>{{name}} Specifications</h3>
-<div class="cnt ">
+<div class="flx fcl fii pnlbg"><h3 class="pnlhd pnlh">{{name}} Specifications</h3>
+<div class="padd pnlbg">
 
 
-<table>
+<table class="table">
 <tbody>
   <tr><td>Name</td><td>{{name}}</td></tr>
   <tr><td>Symbol</td><td>{{symbol}}</td></tr>
   <tr><td>Start Date</td><td>{{cdata.start}}</td></tr>
-  <tr><td>Twitter</td><td>{{cdata.tw}}</td></tr>
+ <tr><td>Twitter</td><td>{{cdata.tw}}</td></tr> 
   <tr><td>Website Url</td><td>{{cdata.web}}</td></tr>
 
 <tr><td>Algorithm</td><td>{{algo}}</td></tr>
@@ -27,17 +27,17 @@
 
 <script>
 
-import AmpTemplate from '@/components/amp/AmpTemplate.js'
+
 export default {
   components: {
-    AmpTemplate,
-  },
+
+},
 
     props: {
     slug:String,
     algo:String,
-    name:String,
     symbol:String,
+    name:String,
         cdata:Object
   }
 }

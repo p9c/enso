@@ -1,5 +1,5 @@
 <template>
-<div class="scs">
+<div class="scs">sdsd
   <Header
   :page="coin.name + ` Transaction` + txid"
       :slug="coin.slug"      

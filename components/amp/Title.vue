@@ -1,30 +1,38 @@
 <template>
-<div class="pnl dbl pha lyt lrw">
-  <amp-img :src="'//i.com-http.us/' +slug+ '/32'" :alt="name"  width="32px" height="32px" layout="fixed"  class="nic">
-  <noscript><img :src="'//i.com-http.us/' +slug+ '/32'" width="32" height="32" :alt="name"></noscript></amp-img>
-<h1><amp-fit-text height="40px" width="240px" layout="flex-item" min-font-size="32"> <a :href="'//' +slug+ '.com-http.us/'">{{name}}</a>  {{page}}</amp-fit-text></h1>
+<div class="flx fcl fii fjcc">
+  <Logo />
+<!-- <h1><amp-fit-text height="32px" width="240px" layout="flex-item" min-font-size="24px"> <a :href="'//' +slug+ '.com-http.us/'">{{name}}</a></amp-fit-text></h1> -->
 </div>
 </template>
 
 
 <script>
-import AmpTemplate from '@/components/amp/AmpTemplate.js'
-export default {
-  components: {
-    AmpTemplate,
-  },
+import Logo from '@/components/elements/Logo.vue'
+import UnescapedScript from '~/components/UnescapedScript.js'
 
+
+export default {
+    components: {
+      UnescapedScript,
+    Logo,
+    },
     props: {
-      page:String,
     slug:String,
+    symbol:String,
     name:String
+  },
+  head () {
+    return {
+      script: [
+        // { hid: "amp-animation", 'custom-element': "amp-animation", src: "https://cdn.ampproject.org/v0/amp-animation-0.1.js", async: '' },
+        // { hid: "amp-position-observer", 'custom-element': "amp-position-observer", src: "https://cdn.ampproject.org/v0/amp-position-observer-0.1.js", async: '' },
+      ],
+      link: [
+        { rel: "preload", href: this.src, as: "image" },
+      ]
+    }
   }
 }
+
 </script>
-
-
-
-
-
-
 
