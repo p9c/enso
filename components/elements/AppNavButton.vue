@@ -14,7 +14,7 @@ If buttons are different pages ("spa=false"), you should specify the 'src' attri
   </div>
   <!-- Else 'src' not specified, so we use <a href=...> to navigate to another page -->
   <div v-else role="tab" class="app-nav-button flx fcl fii " :selected="selected" :option="option">
-    <a class="app-nav-button__link" :href="src">
+    <a class="flx fcl fii app-nav-button__link" :href="src">
       <slot></slot>
     </a>
   </div>
@@ -61,7 +61,6 @@ background: rgba(255,255,255,.8);
         transition: all 162ms ease;
 
 }
-
 .app-nav-button[selected] {
   color: #fff;
   fill: #fff;
@@ -70,6 +69,7 @@ background: rgba(255,255,255,.8);
 .app-nav-button__link {
   color: inherit;
   text-decoration: none;
+  height: 100%;
 }
 
 .app-nav-button__link:visited {

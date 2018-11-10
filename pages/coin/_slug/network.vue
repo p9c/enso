@@ -1,10 +1,8 @@
 <template>
   <AppShell currentPage="network">
 
-    <Page>
       <Explorer :slug="slug" :name="name" />
 
-</Page>
 
   </AppShell>
 
@@ -14,13 +12,11 @@
 <script>
 
 import AppShell from '~/components/AppShell.vue'
-import Page from '~/components/pages/Page.vue'
 import Network from '~/components/pages/Network.vue'
 
 export default {
   components: {
     AppShell,
-    Page,
     Network
   },
 

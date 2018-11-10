@@ -1,24 +1,30 @@
 <template>
-<AppShell currentPage="hash" :slug="slug" :name="name" >
+  <AppShell currentPage="explorer" :slug="slug" :name="name"> 
+
 <AppNavContent selected option="explorer">
- <Block :slug="slug" :name="name" :height="height" :lastblock="lastblock" />
+      <Explorer :slug="slug" :symbol="symbol" :name="name" :algo="algo" :lastblock="lastblock" />
 </AppNavContent>
+
   </AppShell>
+
 </template>
+
+
 <script>
-import axios from '@/plugins/axios'
-import AppNavContent from '@/components/elements/AppNavContent.vue'
-import Block from '@/components/pages/Block.vue'
-import AppShell from '@/components/AppShell.vue'
+import axios from '~/plugins/axios'
+
+import AppShell from '~/components/AppShell.vue'
+import Explorer from '~/components/pages/Explorer.vue'
+import AppNavContent from '~/components/elements/AppNavContent.vue'
+
 export default {
-  name: 'block',
-components: {
-    Block,
+  components: {
     AppShell,
+    Explorer,
     AppNavContent,
   },
   async asyncData({ query, params, error }) {
-    let [cn, lb ] = await Promise.all([
+    let [cn, lb] = await Promise.all([
     //let [cn, lb, nw] = await Promise.all([
       axios.get('http://com-http.us/json/coins/' + params.slug + '.json'),
       axios.get('http://' + params.slug + '.com-http.us/a/b'),
@@ -26,7 +32,6 @@ components: {
     ])
     var coin = cn.data.coin
     var lastblock = lb.data.d
-    var height = params.height
     // var news = nw.news 
 return {
       slug: params.slug,
@@ -34,16 +39,10 @@ return {
       algo: coin.algo,
       symbol: coin.symbol,
       cdata: coin.cdata,
-      lastblock:lastblock,
-      height: height,
+      lastblock:lastblock
            // news:news,
     }
    },
-  head () {
-    return {
-      title: `Coin: ${this.name} Block Height: ${this.height} `
-    }
-  }
 }
-</script>
 
+</script>

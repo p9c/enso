@@ -112,7 +112,7 @@ main.main{
     /* align-items: stretch; 
     align-content: stretch;  */
     overflow-y: auto;
-
+overflow-x: hidden;
     border-radius: 1px;
  
 
@@ -415,7 +415,10 @@ margin: 0 30px 0 0;
   box-shadow: inset  0 0 5px 3px var(--trans-dark);
 }
 
-
+.wtxw h5{
+  background: var(--light-blue);
+  color: var(--lighter);
+}
 
 
 .lbx{

@@ -1,18 +1,18 @@
 <template>
   <article class="flx frw fii pnlbg fwh padb block">
 
-  Block Height  {{lastblock}}<span [text]="blockHeight"></span>
-<amp-state id="blockHeight"       v-html='`{ blockHeight: `+ lastblock + ` }`'></amp-state>
+  Block Height  {{height}}<span [text]="blockHeight"></span>
+<amp-state id="blockHeight" v-html='`{ "blockHeight": "`+ height + `" }`'></amp-state>
 
-<input id="blockHeight-input" type="number" min="0" :max="lastblock"  :placeholder="lastblock" :value="lastblock" [value]="blockHeight" on="input-throttled:AMP.setState({ blockHeight: event.value })"> 
+<input id="blockHeight-input" type="number" min="0" :max="lastblock"  :placeholder="height" :value="height" [value]="blockHeight" on="input-throttled:AMP.setState({ blockHeight: event.value })"> 
                               
 <amp-list 
    id="blockpanel"                
      layout="flex-item"
        items="d" single-item class="cgl" 
-     src="//localhost:9998/a/e/mazacoin/b/436745"
+     :src="'//localhost:9998/a/e/' + slug + '/b/' + height"
       
-            [src]="'//localhost:9998/a/e/mazacoin/b/' + blockHeight"
+            :[src]=" '\'//localhost:9998/a/e/' + slug + '/b/\' + blockHeight' "
 
       v-html='`
   <template type="amp-mustache" id="blockpanel">
@@ -24,7 +24,7 @@
 {{#b.confirmations}}<tr><td ><strong>Confirmations</strong></td><td>{{confirmations}}</td></tr>{{/b.confirmations}}
 {{#b.difficulty}}<tr><td ><strong>Difficulty</strong></td><td>{{difficulty}}</td></tr>{{/b.difficulty}}
 {{#b.hash}}<tr><td ><strong>Hash</strong></td><td><small><a href="/explorer/hash/{{b.hash}}">{{b.hash}}</a></small></td></tr>{{/b.hash}}
-{{#b.height}}<tr><td ><strong>Height</strong></td><td><a href="/explorer/b/{{b.height}}">{{b.height}}</a></td></tr>{{/b.height}}
+{{#b.height}}<tr><td ><strong>Height</strong></td><td><a href="/explorer/block/{{b.height}}">{{b.height}}</a></td></tr>{{/b.height}}
 {{#b.merkleroot}}<tr><td ><strong>Merkle root</strong></td><td><small>{{merkleroot}}</small></td></tr>{{/b.merkleroot}}
 {{#b.nextblockhash}}<tr><td ><strong>Next block hash</strong></td><td><small><a href="/explorer/hash/{{b.nextblockhash}}">{{b.nextblockhash}}</a></small></td></tr>{{/b.nextblockhash}}
 {{#b.nonce}}<tr><td ><strong>Nonce</strong></td><td>{{b.nonce}}</td></tr>{{/b.nonce}}
@@ -35,8 +35,6 @@
 {{#b.size}}<tr><td ><strong>Size</strong></td><td>{{b.size}}</td></tr>{{/b.size}}
 {{#b.time}}<tr><td ><strong>Time</strong></td><td>{{b.time}}</td></tr>{{/b.time}}
 {{#b.version}}<tr><td ><strong>Version</strong></td><td>{{b.version}}</td></tr>{{/b.version}}
-{{#b.tx}}<tr><td><strong>TXs</strong></td><td><ul class="txs">
-{{#b.tx}}<li><a href="/tx/{{.}}"><small>{{.}}</small></a></li>{{/b.tx}}</ul></td></tr>{{/b.tx}}
 </tbody></table>
 {{/b}}
 </div>
@@ -44,19 +42,16 @@
   <h4 class="pad">Transactions</h4>
 <div class="wtxw">
   {{#t}}
+    <h5 class="pads">{{#txid}}<strong>TXid {{txid}}</strong>{{/txid}}</h5>
 	<table class="table table-hover"><tbody>
 {{#t.blockhash}}<tr><td ><strong>Block hash</strong></td><td><a href="/explorer/hash/{{t.blockhash}}">{{t.blockhash}}</a></td></tr>{{/t.blockhash}}
 {{#blocktime}}<tr><td ><strong>Block time</strong></td><td>{{blocktime}}</td></tr>{{/blocktime}}
 {{#confirmations}}<tr><td ><strong>Confirmations</strong></td><td>{{confirmations}}</td></tr>{{/confirmations}}
 {{#hex}}<tr><td ><strong>Hex</strong></td><td>
-  
-      <small>{{hex}}</small>
-
-
+        <small>{{hex}}</small>
 </td></tr>{{/hex}}
 {{#locktime}}<tr><td ><strong>Locktime</strong></td><td>{{locktime}}</td></tr>{{/locktime}}
 {{#time}}<tr><td ><strong>Time</strong></td><td>{{time}}</td></tr>{{/time}}
-{{#txid}}<tr><td ><strong>TXid</strong></td><td><small>{{txid}}</small></td></tr>{{/txid}}
 {{#version}}<tr><td ><strong>Version</strong></td><td>{{version}}</td></tr>{{/version}}
 {{#vin}}<tr> <td ><strong>Value in</strong></td><td>{{#vin}}{{#coinbase}}<strong>Coinbase: </strong><small>{{coinbase}}</small><br>{{/coinbase}}{{#sequence}}<strong>Sequence: </strong>{{sequence}}{{/sequence}}{{/vin}}</td></tr>{{/vin}}
 {{#vout}}<tr><td ><strong>Value out</strong></td><td>{{#vout}}{{#n}}<strong>N: </strong>{{n}} {{/n}}<br>
@@ -90,9 +85,8 @@ export default {
   },
 props: {
     slug:String,
-    algo:String,
     name:String,
-    symbol:String,
+    height:String,
     lastblock:Number,
   },
          

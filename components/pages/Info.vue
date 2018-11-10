@@ -1,5 +1,5 @@
 <template>
-<section class="flx fcl fii">
+<section class="flx fcl fioa">
 <Panel><Basics  :slug="slug" :name="name"  :symbol="symbol" :cdata="cdata" /></Panel>
 <Panel><Specs  :slug="slug" :name="name" :algo="algo" :cdata="cdata" /></Panel>
 <Panel><Trends  :slug="slug" :name="name"  /></Panel>

@@ -1,6 +1,5 @@
 <template>
   <section class="flx fcl fii">
-last =  {{lastblock}}
 <Panel><Blocks  :slug="slug" :symbol="symbol" :name="name" :algo="algo"  :lastblock="lastblock" /></Panel>
 
     
@@ -12,12 +11,14 @@ last =  {{lastblock}}
 import Panel from '~/components/elements/Panel.vue'
 
 import Blocks from '~/components/amp/Blocks.vue'
+import CoinBgImage from '~/components/elements/CoinBgImage.vue'
 
 
 export default {
   components: {
     Panel,
     Blocks,
+    CoinBgImage,
   },
     props: {
     slug:String,

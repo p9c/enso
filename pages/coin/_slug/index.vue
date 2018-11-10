@@ -1,17 +1,9 @@
 <template>
-<div class="scs flx fcl">
-<CoinBgImage id="coinbg" :slug="slug" :name="name" />
-
-<Header page="Beyond BlockChain" :slug="slug" :name="name" />
-
-<main class="scr fwh flx fcl fii padd main">
+  <AppShell currentPage="info" :slug="slug" :name="name"> 
 
 
 
-<section class="flx fcl fii index">
-
-
-<AppNavContent option="info">
+<AppNavContent selected option="info">
         <Info :slug="slug" :name="name" :symbol="symbol" :algo="algo" :cdata="cdata" />
 </AppNavContent>
 
@@ -30,25 +22,16 @@
 
 
 
-</section>
-</main>
+  </AppShell>
 
-
-
-
-<Footer />
-</div>
 </template>
-
 
 <script>
 
 import AppNavContent from '~/components/elements/AppNavContent.vue'
-import CoinBgImage from '~/components/elements/CoinBgImage.vue'
 
 import axios from '~/plugins/axios'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+import AppShell from '@/components/AppShell.vue'
 
 import Info from '@/components/pages/Info.vue'
 import Explorer from '@/components/pages/Explorer.vue'
@@ -61,9 +44,7 @@ export default {
     name: 'coin',
   components: {
     AppNavContent,
-      CoinBgImage,
-      Header,
-    Footer,
+      AppShell,
 Info,
 Network,
 Eco,

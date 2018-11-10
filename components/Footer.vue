@@ -2,9 +2,9 @@
   <footer class="scr fts flx fcl ">
 
 
-    <AppNavBar :sexplorer="true" class="flx frw fjc fsa fii nav">
+    <AppNavBar :explorer="true" class="flx frw fjc fsa fii nav">
 
-      <AppNavButton option="info" class="animbg">
+      <AppNavButton src="/" class="animbg">
         <svg class="flx fcl fii svg-icon-size" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
     <polygon fill="#c0c0c0" points="39.4,23 38.6,19 26,21.6 26,8 22,8 22,20.3 8.1,11.3 5.9,14.7 21.1,24.5 9.4,39.8 12.6,42.2 23.9,27.4 32.3,40.1 35.7,37.9 27.3,25.4"/>
     <circle fill="#3075cf" cx="24" cy="24" r="7"/>
@@ -32,7 +32,7 @@
         <span>Block Explorer</span>
       </AppNavButton>
 
-      <AppNavButton option="network"  class="animbg">
+      <AppNavButton option="/network"  class="animbg">
 
 
         <svg class="flx fcl fii svg-icon-size" viewBox="0 0 64 64" enable-background="new 0 0 64 64">

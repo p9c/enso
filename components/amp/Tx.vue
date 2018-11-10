@@ -1,7 +1,12 @@
 <template>
-<article class="pnl dbl pnlbg"><h3 class="pnlh">Transaction</h3>
-<div class="cnt ">
-  <amp-list width="600"  height="600" layout="responsive" :src="`//` + slug + `.com-http.us/a/tx/` + txid" items="d" single-item class="cgl" v-html='`<template type="amp-mustache">			
+<article class="flx fcl fii pnl dbl pnlbg"><h3 class="pnlh">Transaction</h3>
+  <amp-list 
+  layout="flex-item" 
+  :src="`//` + slug + `.com-http.us/a/tx/` + txid" 
+  items="d" 
+  single-item 
+  class="cgl"
+   v-html='`<template type="amp-mustache">			
 	<table class="table table-hover"><tbody>
 {{#blockhash}}<tr><td ><strong>Block hash</strong></td><td><a href="/explorer/hash/{{blockhash}}">{{blockhash}}</a></td></tr>{{/blockhash}}
 {{#blocktime}}<tr><td ><strong>Block time</strong></td><td>{{blocktime}}</td></tr>{{/blocktime}}
@@ -23,17 +28,13 @@
 </tbody>
 </table>
   </template>`'></amp-list>
-</div></article>
+</article>
 </template>
 
 
 <script>
 
-import AmpTemplate from '@/components/amp/AmpTemplate.js'
 export default {
-  components: {
-    AmpTemplate,
-  },
     props: {
     slug:String,
     name:String,
