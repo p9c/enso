@@ -19,7 +19,7 @@ import axios from '~/plugins/axios'
 //     maxAge: 1111111
 //   })
 // })
-
+let cachedData = null
 export default {
     name: 'coins',
 // props: ['coins'],
@@ -31,8 +31,10 @@ export default {
     axios,
   },
   async asyncData () {
+    if (cachedData) return cachedData    
     let { data } = await axios.get('http://com-http.us/a/coinsimg')
-  return { coins: data }
+  cachedData = data
+ return { coins: data }
   },
   head () {
     return {

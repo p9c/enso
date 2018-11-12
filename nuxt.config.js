@@ -28,18 +28,6 @@ module.exports = {
   mode: 'universal',
 
   // Headers of the page
-  head: {
-    title: pkg.name,
-    meta: [
-      // See app.html for the AMP meta tags.
-    ],
-    link: [
-      // TODO: { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      // TODO: Canonical URL should be "self", whatever the current URL is (not always the root)
-      { rel: 'canonical', href: '/' }, // Wrong!
-    ]
-  },
-
   // Disable loading bar since AMP will not generate a dynamic page.
   loading: false,
 
@@ -102,13 +90,4 @@ module.exports = {
     }
   },
 
-  serverMiddleware: [
-
-    // Return concerts, filtered by query params.
-    '~/api/concerts.js',
-
-    // Return venues
-    '~/api/venues.js'
-    
-  ]
 }

@@ -475,7 +475,6 @@ color: #303030;
   transition: all 33ms ease-in;
 }
 .pnlhd{
-  height:60px;
   margin: 0;
   padding:20px 30px 7px;
 

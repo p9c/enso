@@ -1,8 +1,6 @@
 <template>
-  <div role="tabpanel" class="flx fii app-nav-content" 
-      :hidden="!selected"
-      :[hidden]="`!(appNav.option == '${option}' || (${selected} && appNav.option == ''))`">
-    <slot></slot>
+  <div role="tabpanel" class="flx fioa">
+    <slot />
   </div>
 </template>
 

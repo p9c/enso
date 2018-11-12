@@ -1,7 +1,7 @@
 <template>
   <section class="flx frw fii fsc">
     
-<article v-for="(coin, slug) in bitnodes" :key="slug" class="flx pnl fcl fii mar bitnode">
+<article v-for="(coin, slug) in bitnodes" :key="slug" class="flx pnl fcl fii mar bitnode" amp-fx="fade-in">
   <header class="flx frw pnlhd">
     <figure><amp-img layout="fixed" :src="'//i.com-http.us/' +coin.slug+  '/32'" width="32px" height="32px" :alt="coin.name"/></figure>
       <h3 class="flx fii fjc fai">
@@ -48,6 +48,7 @@ export default {
     return {
       script: [
         { hid: "amp-fit-text", 'custom-element': "amp-fit-text", src: "https://cdn.ampproject.org/v0/amp-fit-text-0.1.js", async: '' },
+         { hid: "amp-fx-collection", 'custom-element': "amp-fx-collection", src: "https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js", async: '' },  
         { hid: "amp-iframe", 'custom-element': "amp-iframe", src: "https://cdn.ampproject.org/v0/amp-iframe-0.1.js", async: '' },
       ],
       link: [

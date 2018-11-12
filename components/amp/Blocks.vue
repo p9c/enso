@@ -1,8 +1,9 @@
 <template>
- <div id="blocks" class="flx fcl fii cnt">
-
-
+ <div id="blocks" class="flx fcl fii pnlbg" amp-fx="fade-in">
+<amp-state id="blockHeight" v-html='`{ "blockHeight": "`+ lastblock + `" }`'></amp-state>
 <BlockHeight  :slug="slug" :lastblock="lastblock" />
+
+                              
      <Block  :slug="slug" :symbol="symbol" :name="name" :algo="algo" :lastblock="lastblock" /> 
   
         </div> 
@@ -20,7 +21,7 @@ export default {
    BlockHeight,
     Block
   },
-        props: {
+props: {
     slug:String,
     algo:String,
     name:String,

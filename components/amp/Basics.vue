@@ -1,5 +1,5 @@
 <template>
-<div class="flx fcl fii pnlbg fjc fai basics">
+<div class="flx fcl fii pnlbg fjc fai basics" amp-fx="fade-in">
   <figure class="padd">
   <amp-img :src="'//i.com-http.us/' + slug + '/128'" :alt="name"  width="128px" height="128px" layout="fixed"  class="nic">
   <noscript><img :src="'//i.com-http.us/' +slug+ '/128'" width="128" height="128" :alt="name"></noscript></amp-img></figure>

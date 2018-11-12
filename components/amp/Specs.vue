@@ -1,5 +1,6 @@
 <template>
-<div class="flx fcl fii pnlbg"><h3 class="pnlhd pnlh">{{name}} Specifications</h3>
+<div class="flx fcl fii pnlbg" amp-fx="fade-in">
+  <h3 class="pnlhd pnlh">{{name}} Specifications</h3>
 <div class="padd pnlbg">
 
 

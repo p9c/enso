@@ -1,16 +1,11 @@
 <template>
   <article class="flx frw fii pnlbg fwh padb block">
-
-  Block Height  {{height}}<span [text]="blockHeight"></span>
-<amp-state id="blockHeight" v-html='`{ "blockHeight": "`+ height + `" }`'></amp-state>
-
-<input id="blockHeight-input" type="number" min="0" :max="lastblock"  :placeholder="height" :value="height" [value]="blockHeight" on="input-throttled:AMP.setState({ blockHeight: event.value })"> 
                               
 <amp-list 
    id="blockpanel"                
      layout="flex-item"
        items="d" single-item class="cgl" 
-     :src="'//localhost:9998/a/e/' + slug + '/b/' + height"
+     :src="'//localhost:9998/a/e/' + slug + '/b/' + lastblock"
       
             :[src]=" '\'//localhost:9998/a/e/' + slug + '/b/\' + blockHeight' "
 
@@ -83,12 +78,13 @@
 export default {
   components: {
   },
-props: {
+        props: {
     slug:String,
+    algo:String,
     name:String,
-    height:String,
+    symbol:String,
     lastblock:Number,
-  },
+  }
          
 
    

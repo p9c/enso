@@ -7,17 +7,17 @@
         <Info :slug="slug" :name="name" :symbol="symbol" :algo="algo" :cdata="cdata" />
 </AppNavContent>
 
-<AppNavContent option="explorer">
+<!-- <AppNavContent option="explorer">
       <Explorer :slug="slug" :symbol="symbol" :name="name" :algo="algo"  :lastblock="lastblock" />
-</AppNavContent>
+</AppNavContent> -->
 
-<AppNavContent option="network">
+<!-- <AppNavContent option="network">
       <Network :slug="slug" :name="name" />
 </AppNavContent>
 
 <AppNavContent option="eco">
       <Eco :slug="slug" :name="name" />
-</AppNavContent>
+</AppNavContent> -->
 
 
 
@@ -74,13 +74,9 @@ return {
            // news:news,
     }
    },
-
-  head () {
-    return {
-      title: `Coin: ${this.name}`
-    }
-  }, 
   head: {
+          // title: `Coin: ${this.name}`,
+          title: `Coin: ${this.slug}`,
     script: [
       // { hid: "amp-install-serviceworker", 'custom-install-serviceworker': "amp-access", src: "https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js", async: '' },
       { hid: "amp-live-list", 'custom-element': "amp-live-list", src: "https://cdn.ampproject.org/v0/amp-live-list-0.1.js", async: '' },
@@ -96,6 +92,8 @@ return {
       { hid: "amp-fit-text", 'custom-element': "amp-fit-text", src: "https://cdn.ampproject.org/v0/amp-fit-text-0.1.js", async: '' },  
       { hid: "amp-iframe", 'custom-element': "amp-iframe", src: "https://cdn.ampproject.org/v0/amp-iframe-0.1.js", async: '' },  
       { hid: "amp-accordion", 'custom-element': "amp-accordion", src: "https://cdn.ampproject.org/v0/amp-accordion-0.1.js", async: '' },  
+      { hid: "amp-fx-collection", 'custom-element': "amp-fx-collection", src: "https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js", async: '' },  
+
     ],
     __dangerouslyDisableSanitizers: ['script'],
   }

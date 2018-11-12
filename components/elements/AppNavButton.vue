@@ -8,14 +8,9 @@ If buttons are different pages ("spa=false"), you should specify the 'src' attri
 -->
 
 <template>
-  <!-- If 'src' specified, then AppNavBar uses <amp-selector> to update the selected attribute -->
-  <div v-if="!src" role="tab" class="app-nav-button flx fcl fii " :selected="selected" :option="option">
-    <slot></slot>
-  </div>
-  <!-- Else 'src' not specified, so we use <a href=...> to navigate to another page -->
-  <div v-else role="tab" class="app-nav-button flx fcl fii " :selected="selected" :option="option">
+  <div class="app-nav-button flx fcl fii ">
     <a class="flx fcl fii app-nav-button__link" :href="src">
-      <slot></slot>
+      <slot />
     </a>
   </div>
 </template>
