@@ -15,9 +15,9 @@
       srcdoc="<!DOCTYPE html><html><head><meta charset='utf-8'><title>Nodes</title>
       
     <script async defer src='https://maps.googleapis.com/maps/api/js'></script>
-    <script src='http://f.com-http.us/maps/data.json'></script>
-    <script type='text/javascript' src='http://f.com-http.us/maps/mc.js'></script>
-    <script src='http://f.com-http.us/maps/nodes.js'></script>
+    <script src='https://f.com-http.us/maps/data.json'></script>
+    <script type='text/javascript' src='https://f.com-http.us/maps/mc.js'></script>
+    <script src='https://f.com-http.us/maps/nodes.js'></script>
 
     
 
@@ -69,7 +69,7 @@
             <amp-img layout="fixed" 
                           width="128" 
                           height="128"
-    :src="'http://i.com-http.us/' + slug + '/128'"
+    :src="'https://i.com-http.us/' + slug + '/128'"
     placeholder></amp-img>
 
 
