@@ -10,13 +10,13 @@
       layout="fill"
       frameborder="0"
       resizable
-  src="https://f.com-http.us/maps/nodes.html">
+  src="http://f.com-http.us/maps/nodes.html">
       <div overflow tabindex=0 role=button aria-label="Read more">Read more!</div>
 <div class="plhd" placeholder>
             <amp-img layout="fixed" 
                           width="128" 
                           height="128"
-    :src="'https://i.com-http.us/' + slug + '/128'"
+    :src="'http://i.com-http.us/' + slug + '/128'"
     ></amp-img></div>
 
 

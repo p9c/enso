@@ -2,7 +2,7 @@
   <div class="flx frw fii coinbg">
       <amp-img
         layout="flex-item"
-        :src="'https://i.com-http.us/' + slug + '/256'" 
+        :src="'http://i.com-http.us/' + slug + '/256'" 
         :alt="name + ' BackGround'" >
       </amp-img>
 

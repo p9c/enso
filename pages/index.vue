@@ -37,7 +37,7 @@ export default {
     Coins
   },
   async asyncData () {
-    let { data } = await axios.get('https://com-http.us/a/bitnodes')
+    let { data } = await axios.get('http://com-http.us/a/bitnodes')
   return { bitnodes: data }
   },
   head () {
@@ -48,7 +48,7 @@ export default {
   head: {
     title: 'Index',
     link: [
-        { rel: "canonical", href: "https://com-http.us/"},
+        { rel: "canonical", href: "http://com-http.us/"},
       ],
     script: [
       // { hid: "amp-install-serviceworker", 'custom-install-serviceworker': "amp-access", src: "https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js", async: '' },

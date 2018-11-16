@@ -1,7 +1,7 @@
 <template>
 <div class="flx fcl fii fjcc">
   <Logo />
-<!-- <h1><amp-fit-text height="32px" width="240px" layout="flex-item" min-font-size="24px"> <a :href="'https://' +slug+ '.com-http.us/'">{{name}}</a></amp-fit-text></h1> -->
+<!-- <h1><amp-fit-text height="32px" width="240px" layout="flex-item" min-font-size="24px"> <a :href="'http://' + slug+ '.com-http.us/'">{{name}}</a></amp-fit-text></h1> -->
 </div>
 </template>
 

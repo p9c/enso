@@ -10,7 +10,7 @@
    <li class="txs">Transactions</li>
    <li >Time</li>
    </ul>
-     <amp-list  id="last-blocks" layout="flex-item" :src="'https://' + slug + '.com-http.us/a/last'" items="d" class="cgl" v-html='`<template type="amp-mustache"><ul class="blck">
+     <amp-list  id="last-blocks" layout="flex-item" :src="'http://' + slug + '.com-http.us/a/last'" items="d" class="cgl" v-html='`<template type="amp-mustache"><ul class="blck">
      {{#height}}<li><a href="/explorer/b/{{height}}">{{height}}</a></li>{{/height}}
      {{#hash}}<li class="hash"><a href="/explorer/hash/{{hash}}">{{hash}}</a></li>{{/hash}}
      {{#difficulty}}<li>{{difficulty}}</li>{{/difficulty}}

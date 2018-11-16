@@ -6,8 +6,8 @@
       :name="coin.name" />
  <main class="scr lyt lrw addr main ">
   <!-- <section class="block"><article class="pnl big"><h1>{{ name }} Block {{ block.hash}}</h1> -->
-<amp-img :src="'https://i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128px" height="128px" layout="fixed"  class="pbg">
-<noscript><img  :src="'https://i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128" height="128"></noscript></amp-img>
+<amp-img :src="'http://i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128px" height="128px" layout="fixed"  class="pbg">
+<noscript><img  :src="'http://i.com-http.us/' +slug+ '/128'" :alt="'128x128 '+slug+ '  logo image'"  width="128" height="128"></noscript></amp-img>
  <Addr :slug="slug" :addr="addr"  /> 
 
 
@@ -41,7 +41,7 @@ Aside,
     Addr
   },
       async asyncData ({ params, error }) {
-   let { data } = await axios.get('https://com-http.us/json/coins/' + params.slug + '.json')
+   let { data } = await axios.get('http://com-http.us/json/coins/' + params.slug + '.json')
     var coin = data.coin
   //console.log(params)
 
