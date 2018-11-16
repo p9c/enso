@@ -1,20 +1,8 @@
 <template>
   <section class="flx fcl fii">
 <Panel>
+  <NodesMap  :slug="slug" :name="name"  /></Panel>
 
-  <!-- ## Using Placeholders -->
-  <!-- The 600px away from the top constraint can be avoided by adding a placeholder image. -->
-  <amp-iframe width="500" title="Netflix House of Cards branding: The Stack"
-                          height="281"
-                          layout="responsive"
-                          sandbox="allow-scripts allow-same-origin allow-popups"
-                          allowfullscreen
-                          frameborder="0"
-                          src="http://127.0.0.1:3554/">
-  </amp-iframe>
-
-
-</Panel>
 
     
   </section>
@@ -23,12 +11,14 @@
 
 <script>
 import Panel from '~/components/elements/Panel.vue'
+import NodesMap from '~/components/amp/NodesMap.vue'
 
 
 
 export default {
   components: {
     Panel,
+    NodesMap,
   },
     props: {
     slug:String,
@@ -38,6 +28,17 @@ export default {
     lastblock:Number,
      nodes:Array,
 },
+  head () {
+    return {
+    script: [
+      { hid: "amp-fit-text", 'custom-element': "amp-fit-text", src: "https://cdn.ampproject.org/v0/amp-fit-text-0.1.js", async: '' },
+      { hid: "amp-iframe", 'custom-element': "amp-iframe", src: "https://cdn.ampproject.org/v0/amp-iframe-0.1.js", async: '' },
+    ],
+    link: [
+      { rel: "preload", href: this.src, as: "image" },
+    ]
+    }
+  }
 }
 </script>
 

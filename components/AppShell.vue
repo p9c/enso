@@ -4,7 +4,7 @@
 <Header page="Beyond BlockChain" :slug="slug" :name="name" />
 
 
-<main class="scr fwh flx fcl fii padd main">
+<main class="scr fwh iflx fcl fii main">
 <slot />
 </main>
 

@@ -25,7 +25,7 @@ export default {
     addr:String
       },
   //   async asyncData ({ params, error }) {
-  //  let { data } = await axios.get('http://com-http.us/json/coins/' + params.slug + '.json')
+  //  let { data } = await axios.get('https://com-http.us/json/coins/' + params.slug + '.json')
   //   var coin = data.coin
   // //console.log(params)
 

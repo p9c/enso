@@ -1,50 +1,53 @@
 <template>
-<div class="scs flx frw coins">
+  <AppShell currentPage="price" :slug="slug" :name="name"> 
 
-    
-    <nuxt-link v-for="(coin, slug) in coins" :key="slug"  :name="coin.name" :to="'https://' +coin.slug+  '.com-http.us/'"  class="flx fcl fooa coin" >
-    <amp-img layout="fixed" :src="'data:image/png;base64, ' + coin.img"  width="32px" height="32px" :alt="coin.name"/>
-    </nuxt-link>
-  
-  </div>
+<AppNavContent selected option="network">
+      <Price :slug="slug" :symbol="symbol" :name="name" :algo="algo" :lastblock="lastblock" :nodes="nodes"/>
+</AppNavContent>
+
+  </AppShell>
+
 </template>
 
-<script>
-import axios from '~/plugins/axios'
-// const LRU = require('lru-cache')
 
-// const renderer = createRenderer({
-//   cache: LRU({
-//     max: 10000,
-//     maxAge: 1111111
-//   })
-// })
-let cachedData = null
+<script>
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
+
+
+import axios from '~/plugins/axios'
+
+import AppShell from '~/components/AppShell.vue'
+import Price from '~/components/pages/Price.vue'
+import AppNavContent from '~/components/elements/AppNavContent.vue'
+
 export default {
-    name: 'coins',
-// props: ['coins'],
-//   serverCacheKey: props => props.coins.id,
-//   render (h) {
-//     return h('div', this.coins.id)
-//   },
   components: {
-    axios,
+    AppShell,
+    Price,
+    AppNavContent,
   },
-  async asyncData () {
-    if (cachedData) return cachedData    
-    let { data } = await axios.get('https://com-http.us/a/coinsimg')
-  cachedData = data
- return { coins: data }
-  },
-  head () {
-    return {
-      title: 'Coins'
+  async asyncData({ query, params, error }) {
+    let [cn] = await Promise.all([
+    //let [cn, lb, nw] = await Promise.all([
+      axios.get('https://com-http.us/json/coins/' + params.slug + '.json'),
+      //axios.get('https://' + params.slug + '.com-http.us/a/news')
+    ])
+    var coin = cn.data.coin
+    // var news = nw.news 
+return {
+      slug: params.slug,
+      name:coin.name,
+      algo: coin.algo,
+      symbol: coin.symbol,
+      cdata: coin.cdata,
     }
-  },
+   },
   head: {
     title: 'Index',
       link: [
-        { rel: "canonical", href: "https://com-http.us/coins"},
+        { rel: "canonical", href: "https://com-http.us/"},
       ],
     script: [
       // { hid: "amp-install-serviceworker", 'custom-install-serviceworker': "amp-access", src: "https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js", async: '' },
@@ -61,31 +64,10 @@ export default {
       { hid: "amp-mustache", 'custom-template': "amp-mustache", src: "https://cdn.ampproject.org/v0/amp-mustache-0.2.js", async: '' },  
       { hid: "amp-fit-text", 'custom-element': "amp-fit-text", src: "https://cdn.ampproject.org/v0/amp-fit-text-0.1.js", async: '' },  
       { hid: "amp-iframe", 'custom-element': "amp-iframe", src: "https://cdn.ampproject.org/v0/amp-iframe-0.1.js", async: '' },  
-      { hid: "amp-accordion", 'custom-element': "amp-accordion", src: "https://cdn.ampproject.org/v0/amp-accordion-0.1.js", async: '' },  
+      { hid: "amp-accordion", 'custom-element': "amp-accordion", src: "https://cdn.ampproject.org/v0/amp-accordion-0.1.js", async: '' }, 
+            { hid: "amp-fx-collection", 'custom-element': "amp-fx-collection", src: "https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js", async: '' },  
     ],
     __dangerouslyDisableSanitizers: ['script'],
   }
 }
 </script>
-
-
-
-<style>
-.coins{
-flex-wrap: wrap;
-justify-content: flex-start;
-align-items: flex-start;
-}
-
-.coin{
-  width: 38px;
-height: 38px;
-margin: 3px;
-padding: 3px;
-background: #fff;
-}
-.coin:hover{
-  background: #303030;
-  box-shadow: 0 0 0 2px #30cf30;
-}
-</style>

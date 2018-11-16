@@ -1,6 +1,6 @@
 <template>
   <section class="flx fcl fii">
-<Panel>
+<Panel class="flx fii">
 <Tx :slug="slug" :name="name"  :txid="txid"  /> 
 </Panel>
   </section>

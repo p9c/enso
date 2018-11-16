@@ -1,7 +1,7 @@
 <template>
 <div class="pnl pnlbg fcl fii ftw"><h3>{{name}} Peers</h3>
  <div class="cnt peers">
-  <amp-list  id="coin-peers"  layout="flex-item"  :src="'//' + slug + '.com-http.us/a/peer'"  items= "d"  class="m1" v-html='`<template type="amp-mustache"   id="coin-peers">
+  <amp-list  id="coin-peers"  layout="flex-item"  :src="'https://' + slug + '.com-http.us/a/peer'"  items= "d"  class="m1" v-html='`<template type="amp-mustache"   id="coin-peers">
       {{#addr}}<section>
         <h6>{{addr}}</h6>
 <table class="table table-hover"><tbody>
@@ -46,7 +46,7 @@ export default {
     name:String
   //   },
   // async asyncData () {
-  //  let { data } = await axios.get('http://' + slug + '.com-http.us/a/peer')
+  //  let { data } = await axios.get('https://' + slug + '.com-http.us/a/peer')
   //   return { peer:data.d }
 
   }

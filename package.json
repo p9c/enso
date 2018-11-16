@@ -4,8 +4,14 @@
   "description": "Enso Is predSuccessor of Jorm",
   "author": "ParallelCoinTeam",
   "private": true,
+  "config": {
+    "nuxt": {
+      "host": "127.0.0.1",
+      "port": "3553"
+    }
+  },
   "scripts": {
-    "dev": "nuxt  --port 3553",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -13,16 +19,18 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.4",
+    "@google/markerclusterer": "^1.0.3",
+    "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/component-cache": "^1.1.3",
     "axios": "^0.18.0",
-    "nuxt": "^1.0.0"
+    "nuxt": "^2.2.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "cross-env": "^5.0.1",
-    "eslint": "^4.15.0",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-vue": "^4.0.0"
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.0.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-vue": "^4.7.1",
+    "webpack": "^4.25.1"
   }
 }

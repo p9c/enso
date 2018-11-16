@@ -14,6 +14,8 @@
 // import TabList from '~/components/TabList.vue'
 // import TabButton from '~/components/TabButton.vue'
 // import TabContent from '~/components/TabContent.vue'
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
@@ -35,7 +37,7 @@ export default {
     Coins
   },
   async asyncData () {
-    let { data } = await axios.get('http://com-http.us/a/bitnodes')
+    let { data } = await axios.get('https://com-http.us/a/bitnodes')
   return { bitnodes: data }
   },
   head () {
@@ -45,6 +47,9 @@ export default {
   },
   head: {
     title: 'Index',
+    link: [
+        { rel: "canonical", href: "https://com-http.us/"},
+      ],
     script: [
       // { hid: "amp-install-serviceworker", 'custom-install-serviceworker': "amp-access", src: "https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js", async: '' },
       { hid: "amp-live-list", 'custom-element': "amp-live-list", src: "https://cdn.ampproject.org/v0/amp-live-list-0.1.js", async: '' },

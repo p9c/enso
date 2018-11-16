@@ -37,7 +37,7 @@
    </ul>
    
    <main class="lbl">
-   <amp-list  id="last-blocks" layout="flex-item" :src="'//' + slug + '.com-http.us/a/last'" items="d" class="cgl" v-html='`
+   <amp-list  id="last-blocks" layout="flex-item" :src="'https://' + slug + '.com-http.us/a/last'" items="d" class="cgl" v-html='`
    
    <template type="amp-mustache" id="last-blocks">
      <table class="table table-hover"><tbody>

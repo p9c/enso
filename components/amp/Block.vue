@@ -5,9 +5,9 @@
    id="blockpanel"                
      layout="flex-item"
        items="d" single-item class="cgl" 
-     :src="'//localhost:9998/a/e/' + slug + '/b/' + lastblock"
+     :src="'https://' + slug + '.com-http.us/a/b/' + lastblock"
       
-            :[src]=" '\'//localhost:9998/a/e/' + slug + '/b/\' + blockHeight' "
+            :[src]=" '\'https://' + slug + '.com-http.us/a/b/\' + blockHeight' "
 
       v-html='`
   <template type="amp-mustache" id="blockpanel">
@@ -37,7 +37,7 @@
   <h4 class="pad">Transactions</h4>
 <div class="wtxw">
   {{#t}}
-    <h5 class="pads">{{#txid}}<strong>TXid {{txid}}</strong>{{/txid}}</h5>
+    <h5 class="pads">{{#txid}}<strong>TXid <a href="https://` + slug + `.com-http.us/explorer/tx/{{txid}}">{{txid}}</a></strong>{{/txid}}</h5>
 	<table class="table table-hover"><tbody>
 {{#t.blockhash}}<tr><td ><strong>Block hash</strong></td><td><a href="/explorer/hash/{{t.blockhash}}">{{t.blockhash}}</a></td></tr>{{/t.blockhash}}
 {{#blocktime}}<tr><td ><strong>Block time</strong></td><td>{{blocktime}}</td></tr>{{/blocktime}}

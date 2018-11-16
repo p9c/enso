@@ -1,6 +1,7 @@
 <template>
   <section class="flx fcl fii">
-<Panel><Blocks  :slug="slug" :symbol="symbol" :name="name" :algo="algo"  :lastblock="lastblock" /></Panel>
+<Panel class="flx fii">
+  <Blocks  :slug="slug" :symbol="symbol" :name="name" :algo="algo"  :lastblock="lastblock" /></Panel>
 
     
   </section>

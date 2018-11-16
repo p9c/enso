@@ -1,5 +1,5 @@
 <template>
-  <div class="flx frw fioa mrbt">
+  <div class="pnl">
     <slot/>
   </div>
 </template>

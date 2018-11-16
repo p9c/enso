@@ -1,15 +1,15 @@
 <template>
-<div class="flx fcl fii pnlbg fjc fai basics" amp-fx="fade-in">
+<div class="flx fcl pnlbg fjc fai basics" amp-fx="fade-in">
   <figure class="padd">
-  <amp-img :src="'//i.com-http.us/' + slug + '/128'" :alt="name"  width="128px" height="128px" layout="fixed"  class="nic">
-  <noscript><img :src="'//i.com-http.us/' +slug+ '/128'" width="128" height="128" :alt="name"></noscript></amp-img></figure>
-<h1 class="flx fii fcl fjc fai"><amp-fit-text height="66px" width="280px" layout="flex-item" min-font-size="32"> <a :href="'//' +slug+ '.com-http.us/'">{{name}}</a></amp-fit-text></h1>
+  <amp-img :src="'https://i.com-http.us/' + slug + '/128'" :alt="name"  width="128px" height="128px" layout="fixed"  class="nic">
+  <noscript><img :src="'https://i.com-http.us/' +slug+ '/128'" width="128" height="128" :alt="name"></noscript></amp-img></figure>
+<h1 class="flx fii fcl fjc fai"><amp-fit-text height="66px" width="280px" layout="flex-item" min-font-size="32"> <a :href="'https://' +slug+ '.com-http.us/'">{{name}}</a></amp-fit-text></h1>
 <div class="mard desc" v-html="cdata.desc"></div>
 
 <ul class="flx fii sts">
-  <li><button on="tap:AMP.navigateTo(url='//com-http.us/')" class="orange">blocks</button></li>
-  <li class="stm"><button  on="tap:AMP.navigateTo(url='//com-http.us/')" class="green">transactions</button></li>
-  <li><button  on="tap:AMP.navigateTo(url='//com-http.us/')" class="red">price</button></li>
+  <li><button :on="'tap:AMP.navigateTo(url=\'//' + slug + '.com-http.us/explorer\')'" class="orange">Blocks</button></li>
+  <li class="stm"><button  :on="'tap:AMP.navigateTo(url=\'//' + slug + '.com-http.us/network\')'" class="green">Network</button></li>
+  <li><button :on="'tap:AMP.navigateTo(url=\'//' + slug + '.com-http.us/price\')'" class="red">Price</button></li>
   </ul>
 
 </div></template>

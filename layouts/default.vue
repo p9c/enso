@@ -101,12 +101,10 @@ body{
   transition: all 38ms ease-in;
 }
 
-
-
-
 main.main{
   position: relative;
   margin: 10px 0;
+  padding: 30px 15px;
     flex: 1;
     justify-content: flex-start; 
     /* align-items: stretch; 
@@ -114,13 +112,25 @@ main.main{
     overflow-y: auto;
 overflow-x: hidden;
     border-radius: 1px;
- 
-
 }
+
+
+
+.mwo{
+max-width: 300px;
+}
+
+.mwt{
+max-width: 600px;
+}
+
 
 /* GRID HELP */ 
 .flx{
   display: flex;
+}
+.iflx{
+  display: inline-flex;
 }
 
 .foi{
@@ -361,6 +371,17 @@ ul.sts li button.yellowblue:hover{
 
 
 
+/* HELP */
+
+.plhd{
+  display: flex!important;
+  width: 100%;
+  height: 100%;
+  background: #cfcfcf;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 /* BLOCKS */
@@ -449,12 +470,18 @@ margin: 0 30px 0 0;
 /* PANELS */
 
 .pnl{
-  margin-bottom: 30px;
+  margin: 0 15px 30px;
   min-width: 300px;
 border-radius: 1px;
 transition: all 55ms ease-in;
 }
 
+.pnl.dbl{
+  min-width: 600px;
+}
+.pnl.tpl{
+  min-width: 900px;
+}
 
 .pnlbg{
 background: #fcfcfc; /* Old browsers */
@@ -545,6 +572,7 @@ display: none;
 
 
 .tps input{
+  padding-left: 30px;
   font-size: 14px;
   line-height: 20px;
   border: none;

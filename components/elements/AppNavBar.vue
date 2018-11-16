@@ -6,7 +6,7 @@ children representing the different buttons in the navigation bar.
 
 <template>
   <div v-if="explorer" class="mainnav">
-    <amp-selector role="tablist" layout="container" class="flx frw app-nav-bar__container">
+    <amp-selector role="tablist" layout="container" class="flx frw fii app-nav-bar__container">
       <slot />
     </amp-selector>
   </div>

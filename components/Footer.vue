@@ -2,7 +2,7 @@
   <footer class="scr fts flx fcl ">
 
 
-    <AppNavBar :explorer="true" class="flx frw fjc fsa fii nav">
+    <AppNavBar :explorer="true" class="flx frw fjc fsa fii appnav">
 
       <AppNavButton src="/" class="animbg">
         <svg class="flx fcl fii svg-icon-size" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
@@ -45,12 +45,20 @@
         <span>Network</span>
       </AppNavButton>
 
-      <AppNavButton src="eco" class="animbg">
+      <AppNavButton src="/price" class="animbg">
         <svg class="flx fcl fii svg-icon-size" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
     <path fill="#ff7500" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/>
     <path fill="#ffd500" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/>
 </svg>
-        <span>Eco</span>
+         <span>Price</span>
+      </AppNavButton>
+
+      <AppNavButton src="/ecosystem" class="animbg">
+        <svg class="flx fcl fii svg-icon-size" viewBox="0 0 64 64" enable-background="new 0 0 64 64">
+    <path fill="#ff7500" d="M40,12H22l-4-4H8c-2.2,0-4,1.8-4,4v8h40v-4C44,13.8,42.2,12,40,12z"/>
+    <path fill="#ffd500" d="M40,12H8c-2.2,0-4,1.8-4,4v20c0,2.2,1.8,4,4,4h32c2.2,0,4-1.8,4-4V16C44,13.8,42.2,12,40,12z"/>
+</svg>
+        <span>EcoSystem</span>
       </AppNavButton>
 
     </AppNavBar>
@@ -72,7 +80,7 @@ import AppNavButton from '~/components/elements/AppNavButton.vue'
 
 
 export default {
-    name: 'nav',
+    name: 'appnav',
   components: {
     AppNavBar,
     AppNavButton,

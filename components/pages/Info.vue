@@ -1,8 +1,10 @@
 <template>
-<section class="flx fcl fioa">
-<Panel><Basics  :slug="slug" :name="name"  :symbol="symbol" :cdata="cdata" /></Panel>
-<Panel><Specs  :slug="slug" :name="name" :algo="algo" :cdata="cdata" /></Panel>
-<Panel><Trends  :slug="slug" :name="name"  /></Panel>
+<section class="iflx frw fwr fii">
+<Panel  ><Basics  :slug="slug" :name="name"  :symbol="symbol" :cdata="cdata" /></Panel>
+<Panel  ><Specs  :slug="slug" :name="name" :algo="algo" :symbol="symbol" :cdata="cdata" /></Panel>
+<Panel class="dbl" ><Trends  :slug="slug" :name="name"  /></Panel>
+<Panel  ><Price  :slug="slug" :name="name" /></Panel>
+
 <!-- <Panel><News  :slug="slug" :name="name" /></Panel> -->
 </section>
 </template>
@@ -12,6 +14,8 @@ import Panel from '~/components/elements/Panel.vue'
 import Basics from '~/components/amp/Basics.vue'
 import Specs from '~/components/amp/Specs.vue'
 import Trends from '~/components/amp/Trends.vue'
+import Price from '~/components/amp/Price.vue'
+
 // import News from '~/components/amp/News.vue'
 
 export default {
@@ -20,6 +24,7 @@ export default {
     Basics,
     Specs,
     Trends,
+    Price,
     // News,
     
   },

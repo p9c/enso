@@ -3,7 +3,7 @@
     
 <article v-for="(coin, slug) in bitnodes" :key="slug" class="flx pnl fcl fii mar bitnode" amp-fx="fade-in">
   <header class="flx frw pnlhd">
-    <figure><amp-img layout="fixed" :src="'//i.com-http.us/' +coin.slug+  '/32'" width="32px" height="32px" :alt="coin.name"/></figure>
+    <figure><amp-img layout="fixed" :src="'https://i.com-http.us/' +coin.slug+  '/32'" width="32px" height="32px" :alt="coin.name"/></figure>
       <h3 class="flx fii fjc fai">
         <nuxt-link :name="coin.name" :to="'//' +coin.slug+  '.com-http.us/'"  class="flx fcl fii" >
         <!-- <amp-fit-text height="32px" layout="flex-item" min-font-size="20px">{{coin.name}}🚀</amp-fit-text> -->

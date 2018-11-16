@@ -20,11 +20,11 @@ components: {
   async asyncData({ query, params, error }) {
     let [cn, lb, bh] = await Promise.all([
     //let [cn, lb, nw] = await Promise.all([
-      axios.get('http://com-http.us/json/coins/' + params.slug + '.json'),
-      axios.get('http://' + params.slug + '.com-http.us/a/b'),
+      axios.get('https://com-http.us/json/coins/' + params.slug + '.json'),
+      axios.get('https://' + params.slug + '.com-http.us/a/b'),
       axios.get('http://localhost:9998/a/e/' + params.slug +'/hash/' + params.hash),
 
-      //axios.get('http://' + params.slug + '.com-http.us/a/news')
+      //axios.get('https://' + params.slug + '.com-http.us/a/news')
     ])
     var coin = cn.data.coin
     var lastblock = lb.data.d

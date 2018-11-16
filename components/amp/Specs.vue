@@ -1,5 +1,5 @@
 <template>
-<div class="flx fcl fii pnlbg" amp-fx="fade-in">
+<div class="flx fcl fooa pnlbg" amp-fx="fade-in">
   <h3 class="pnlhd pnlh">{{name}} Specifications</h3>
 <div class="padd pnlbg">
 
@@ -43,3 +43,11 @@ export default {
   }
 }
 </script>
+
+<style>
+.desc{
+  max-width: 300px;
+}
+
+
+</style>
