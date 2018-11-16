@@ -5,9 +5,9 @@
    id="blockpanel"                
      layout="flex-item"
        items="d" single-item class="cgl" 
-     :src="'http://' + slug + '.com-http.us/a/b/' + lastblock"
+     :src="'https://' + slug + '.com-http.us/a/b/' + lastblock"
       
-            :[src]=" '\'http://' + slug + '.com-http.us/a/b/\' + blockHeight' "
+            :[src]=" '\'https://' + slug + '.com-http.us/a/b/\' + blockHeight' "
 
       v-html='`
   <template type="amp-mustache" id="blockpanel">
