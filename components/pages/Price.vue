@@ -1,7 +1,7 @@
 <template>
   <section class="flx frw fii">
-<Panel ><Price  :slug="slug" :symbol="symbol" :name="name" /></Panel>
-<Panel class="tpl" ><Trades  :slug="slug" :symbol="symbol" :name="name" /></Panel>
+<Panel ><Price  :slug="slug" :name="name" /></Panel>
+<Panel class="tpl" ><Trades  :slug="slug" :name="name" /></Panel>
 
     
   </section>
@@ -24,8 +24,6 @@ export default {
     props: {
     slug:String,
     name:String,
-    symbol:String,
-    algo:String,
   }
 }
 </script>

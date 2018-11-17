@@ -3,13 +3,14 @@
     <div class="pnl cnt ">
 
         <amp-lightbox id="coins" layout="nodisplay">
-    <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
+    <div class="lightbox" on="tap:coins.close" role="button" tabindex="0">
   
 <amp-iframe 
-    sandbox="allow-scripts allow-same-origin"
-    layout="flex-item"
+    sandbox="allow-scripts"
+    layout="fill"
     frameborder="0"
     src="https://com-http.us/coins">
+<div class="plhd" placeholder><amp-img src="https://i.com-http.us/parallelcoin/128" width="128px" height="128px" layout="fixed"></amp-img></div>
 </amp-iframe>
 
     </div>
@@ -21,15 +22,6 @@
     </div>
 </section>
 </template>
-
-
-
-
-<script>
-
-</script>
-
-
 <style>
     .lightbox {
       background: rgba(0,0,0,0.8);

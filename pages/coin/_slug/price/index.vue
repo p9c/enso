@@ -2,7 +2,7 @@
   <AppShell currentPage="price" :slug="slug" :name="name"> 
 
 <AppNavContent selected option="network">
-      <Price :slug="slug" :symbol="symbol" :name="name" :algo="algo" :lastblock="lastblock" :nodes="nodes"/>
+      <Price :slug="slug" :name="name" />
 </AppNavContent>
 
   </AppShell>

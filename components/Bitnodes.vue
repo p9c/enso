@@ -1,7 +1,7 @@
 <template>
-  <section class="flx frw fii fsc">
+  <section class="flx frw fwr fsc">
     
-<article v-for="(coin, slug) in bitnodes" :key="slug" class="flx pnl fcl fii mar bitnode" amp-fx="fade-in">
+<article v-for="(coin, slug) in bitnodes" :key="slug" class="flx pnl pnlbg fcl mar bitnode" amp-fx="fade-in">
   <header class="flx frw pnlhd">
     <figure><amp-img layout="fixed" :src="'https://i.com-http.us/' +coin.slug+  '/32'" width="32px" height="32px" :alt="coin.name"/></figure>
       <h3 class="flx fii fjc fai">
@@ -11,9 +11,9 @@
         </nuxt-link>
         </h3>
   </header>
-  <main class="flx fii fcl pnl pnlbg"><amp-live-list :id="coin.slug+ '-live'" data-poll-interval="15000" data-max-items-per-page="1" class="flx fii">
+  <main class="flx fcl"><amp-live-list :id="coin.slug+ '-live'" data-poll-interval="15000" data-max-items-per-page="1" class="flx ">
   <button update on="tap:amp-live-list-update.update" class="btn btn-pri">You have updates</button>
-      <div items class="flx fii"><div :id="coin.slug+ '-stat'" data-sort-time="1234567" data-update-time="20181021052854" class="flx fii">
+      <div items class="flx fii"><div :id="coin.slug+ '-stat'" data-sort-time="1234567" data-update-time="20181021052854" class="flx">
      <Mining :slug="coin.slug" /> 
         </div></div>
       </amp-live-list></main>

@@ -374,7 +374,6 @@ ul.sts li button.yellowblue:hover{
 /* HELP */
 
 .plhd{
-  display: flex!important;
   width: 100%;
   height: 100%;
   background: #cfcfcf;
