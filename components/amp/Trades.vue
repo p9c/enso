@@ -3,7 +3,7 @@
   <h3 class="pnlhd pnlh">{{name}} Trades</h3>
 <div class="padd pnlbg">
 <amp-iframe :title="name +' Trades'"  :src="'https://' + slug + '.com-http.us/frames/trades'" height="800px" width="auto" layout="fixed-height"  frameborder="0"  sandbox="allow-scripts">
-<div class="plhd" placeholder><amp-img :src="'https://i.com-http.us/' +slug+  '/128'" width="128px" height="128px" layout="fixed"></amp-img></div></amp-iframe>
+<BTCAnim /></amp-iframe>
 </div></div>
 </template>
       
@@ -12,10 +12,11 @@
 
 <script>
 
-import AmpTemplate from '@/components/amp/AmpTemplate.js'
+import BTCAnim from '@/components/amp/BTCAnim.vue'
+
 export default {
   components: {
-    AmpTemplate,
+    BTCAnim,
   },
 
     props: {

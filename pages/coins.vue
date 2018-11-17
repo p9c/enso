@@ -1,16 +1,15 @@
 <template>
-<div class="flx frw fwr coins">
-
-    
-    <a v-for="(coin, slug) in coins" :key="slug" :name="coin.name" target="_blank" :href="'https://' + coin.slug +  '.com-http.us/'" class="flx fcl fooa coin" >
-    <amp-img layout="fixed" :src="'data:image/png;base64, ' + coin.img"  width="32px" height="32px" :alt="coin.name"/>
-    </a>
-  
-  </div>
+<Coins :coins="coins" />
 </template>
 
 <script>
+
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 import axios from '~/plugins/axios'
+
+import Coins from '@/components/amp/Coins.vue'
+
 // const LRU = require('lru-cache')
 
 // const renderer = createRenderer({
@@ -29,10 +28,11 @@ export default {
 //   },
   components: {
     axios,
+    Coins,
   },
   async asyncData () {
 //    if (cachedData) return cachedData    
-    let { data } = await axios.get('http://com-http.us/a/coinsimg')
+    let { data } = await axios.get('https://com-http.us/a/coinsimg')
  // cachedData = data
  return { coins: data }
   },
@@ -44,7 +44,7 @@ export default {
   head: {
     title: 'Index',
       link: [
-        { rel: "canonical", href: "http://com-http.us/coins"},
+        { rel: "canonical", href: "https://com-http.us/coins"},
       ],
     script: [
 //      { hid: "amp-bind", 'custom-element': "amp-bind", src: "https://cdn.ampproject.org/v0/amp-bind-0.1.js", async: '' },

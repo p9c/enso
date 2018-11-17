@@ -10,8 +10,7 @@
     layout="fill"
     frameborder="0"
     src="https://com-http.us/coins">
-<div class="plhd" placeholder><amp-img src="https://i.com-http.us/parallelcoin/128" width="128px" height="128px" layout="fixed"></amp-img></div>
-</amp-iframe>
+<BTCAnim /></amp-iframe>
 
     </div>
   </amp-lightbox>
@@ -22,6 +21,17 @@
     </div>
 </section>
 </template>
+<script>
+
+import BTCAnim from '@/components/amp/BTCAnim.vue'
+export default {
+  components: {
+    BTCAnim,
+  },
+}
+</script>
+
+
 <style>
     .lightbox {
       background: rgba(0,0,0,0.8);

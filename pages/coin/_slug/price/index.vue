@@ -31,7 +31,7 @@ export default {
   async asyncData({ query, params, error }) {
     let [cn] = await Promise.all([
     //let [cn, lb, nw] = await Promise.all([
-      axios.get('http://com-http.us/json/coins/' + params.slug + '.json'),
+      axios.get('https://com-http.us/json/coins/' + params.slug + '.json'),
       //axios.get('http://' + params.slug  + '.com-http.us/a/news')
     ])
     var coin = cn.data.coin
@@ -47,7 +47,7 @@ return {
   head: {
     title: 'Index',
       link: [
-        { rel: "canonical", href: "http://com-http.us/"},
+        { rel: "canonical", href: "https://com-http.us/"},
       ],
     script: [
       // { hid: "amp-install-serviceworker", 'custom-install-serviceworker': "amp-access", src: "https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js", async: '' },

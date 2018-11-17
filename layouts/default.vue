@@ -371,16 +371,8 @@ ul.sts li button.yellowblue:hover{
 
 
 
+
 /* HELP */
-
-.plhd{
-  width: 100%;
-  height: 100%;
-  background: #cfcfcf;
-  justify-content: center;
-  align-items: center;
-}
-
 
 
 /* BLOCKS */
@@ -526,7 +518,7 @@ text-shadow: 0px 1px 0px rgba(243,243,243,.5);
 /*****/
 
 
-.bitnode header{
+.bitnode .pnlhd{
     box-shadow:  inset 0 5px 10px  var(--dark),inset 0 0px 0 var(--gray);
 border: none;
   background: var(--light);
@@ -536,17 +528,17 @@ border: none;
 
 }
 
-.bitnode header:hover{
+.bitnode .pnlhd:hover{
     box-shadow:  inset 0 5px 10px  var(--dark),inset 0 99px 0 var(--gray);
         transition: all 62ms ease-in;
 
 }
-.bitnode h3 a{
+.bitnode h3{
   padding-left: 15px;
   color: var(--dark);
   text-shadow: 0 0px 0 var(--trans-light);
 }
-.bitnode header:hover, h3 a{
+.bitnode .pnlhd:hover, h3{
   text-shadow: 0 1px 0 var(--trans-light);
 }
 
