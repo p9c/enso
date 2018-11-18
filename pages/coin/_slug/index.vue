@@ -3,9 +3,7 @@
 
 
 
-<AppNavContent selected option="info">
-        <Info :slug="slug" :name="name" :symbol="symbol" :algo="algo" :cdata="cdata" />
-</AppNavContent>
+        <Info :slug="slug" :name="name" :symbol="symbol" :algo="algo" :cdata="cdata" :lastblock="lastblock" />
 
 
 
@@ -17,7 +15,6 @@
 <script>
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-import AppNavContent from '~/components/elements/AppNavContent.vue'
 
 import axios from '~/plugins/axios'
 import AppShell from '@/components/AppShell.vue'
@@ -28,7 +25,6 @@ import Info from '@/components/pages/Info.vue'
 export default {
     name: 'coin',
   components: {
-    AppNavContent,
       AppShell,
 Info,
       },
@@ -36,11 +32,13 @@ Info,
     let [cn, lb] = await Promise.all([
     //let [cn, lb, nw] = await Promise.all([
       axios.get('https://com-http.us/json/coins/' + params.slug + '.json'),
+      axios.get('https://' + params.slug  + '.com-http.us/a/b'),
 
     ])
     var coin = cn.data.coin
 
-  
+      var lastblock = lb.data.b
+
   
     // var news = nw.news 
 return {
@@ -49,7 +47,7 @@ return {
       algo: coin.algo,
       symbol: coin.symbol,
       cdata: coin.cdata,
-	bitnode: coin.bitnode,
+	lastblock: lastblock,
     }
    },
   head: {

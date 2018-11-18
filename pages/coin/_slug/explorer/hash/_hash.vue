@@ -1,13 +1,10 @@
 <template>
 <AppShell currentPage="hash" :slug="slug" :name="name" >
-<AppNavContent selected option="explorer">
  <Hash :slug="slug" :name="name" :hash="hash" :height="height" :lastblock="lastblock" />
-</AppNavContent>
   </AppShell>
 </template>
 <script>
 import axios from '@/plugins/axios'
-import AppNavContent from '@/components/elements/AppNavContent.vue'
 import Hash from '@/components/pages/Hash.vue'
 import AppShell from '@/components/AppShell.vue'
 export default {
@@ -15,7 +12,6 @@ export default {
 components: {
     Hash,
     AppShell,
-    AppNavContent,
   },
   async asyncData({ query, params, error }) {
     let [cn, lb, bh] = await Promise.all([

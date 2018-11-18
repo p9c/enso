@@ -1,9 +1,7 @@
 <template>
   <AppShell currentPage="price" :slug="slug" :name="name"> 
 
-<AppNavContent selected option="network">
       <Price :slug="slug" :name="name" />
-</AppNavContent>
 
   </AppShell>
 
@@ -20,13 +18,11 @@ import axios from '~/plugins/axios'
 
 import AppShell from '~/components/AppShell.vue'
 import Price from '~/components/pages/Price.vue'
-import AppNavContent from '~/components/elements/AppNavContent.vue'
 
 export default {
   components: {
     AppShell,
     Price,
-    AppNavContent,
   },
   async asyncData({ query, params, error }) {
     let [cn] = await Promise.all([

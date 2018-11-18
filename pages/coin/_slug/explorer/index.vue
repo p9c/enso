@@ -1,9 +1,7 @@
 <template>
   <AppShell currentPage="explorer" :slug="slug" :name="name"> 
 
-<AppNavContent selected option="explorer">
       <Explorer :slug="slug" :symbol="symbol" :name="name" :algo="algo" :lastblock="lastblock" />
-</AppNavContent>
 
   </AppShell>
 
@@ -20,13 +18,11 @@ import axios from '~/plugins/axios'
 
 import AppShell from '~/components/AppShell.vue'
 import Explorer from '~/components/pages/Explorer.vue'
-import AppNavContent from '~/components/elements/AppNavContent.vue'
 
 export default {
   components: {
     AppShell,
     Explorer,
-    AppNavContent,
   },
   async asyncData({ query, params, error }) {
     let [cn, lb] = await Promise.all([

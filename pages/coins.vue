@@ -1,14 +1,13 @@
 <template>
-<Coins :coins="coins" />
+<AllCoins :coins="coins" />
 </template>
-
 <script>
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 import axios from '~/plugins/axios'
 
-import Coins from '@/components/amp/Coins.vue'
+import AllCoins from '@/components/amp/AllCoins.vue'
 
 // const LRU = require('lru-cache')
 
@@ -28,7 +27,7 @@ export default {
 //   },
   components: {
     axios,
-    Coins,
+    AllCoins,
   },
   async asyncData () {
 //    if (cachedData) return cachedData    
@@ -42,7 +41,7 @@ export default {
     }
   },
   head: {
-    title: 'Index',
+    title: 'Coins Index',
       link: [
         { rel: "canonical", href: "https://com-http.us/coins"},
       ],

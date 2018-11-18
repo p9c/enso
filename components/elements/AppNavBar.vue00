@@ -4,15 +4,11 @@ This component takes a series of alternating <AppNavButton> and <AppNavContent>
 children representing the different buttons in the navigation bar.
 -->
 
+
 <template>
-  <div v-if="explorer" class="mainnav">
-    <amp-selector role="tablist" layout="container" class="flx frw fii app-nav-bar__container">
-      <slot />
-    </amp-selector>
-  </div>
-  <div v-else class="app-nav-bar app-nav-bar__container">
-    <slot />
-  </div>
+  <ul v-if="explorer" class="qbtns">
+        <slot />
+    </ul>
 </template>
 
 

@@ -4,7 +4,7 @@
  <main class="scr fwh flx fcl fii main">
    <section class="flx fcl fii index">
 <Bitnodes  :bitnodes="bitnodes"  />
-<Coins  />
+<Coins />
      </section></main>
   <Footer /></div>
 </template>
@@ -20,6 +20,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import Bitnodes from '@/components/Bitnodes.vue'
+
 import Coins from '@/components/Coins.vue'
 import axios from '~/plugins/axios'
 
@@ -28,21 +29,24 @@ import axios from '~/plugins/axios'
 export default {
     name: 'index',
   components: {
-//    DescriptionPanel,
-    
     axios,
     Header,
     Footer,
     Bitnodes,
-    Coins
+    Coins,
   },
   async asyncData () {
-    let { data } = await axios.get('https://com-http.us/a/bitnodes')
-  return { bitnodes: data }
-  },
-  head () {
-    return {
-      title: 'Index'
+  let [bn] = await Promise.all([
+      axios.get('https://com-http.us/a/bitnodes'),
+      // axios.get('https://com-http.us/a/coinsimg')
+    ])
+    var bitnodes = bn.data
+    // var coins = ci.data
+    // var news = nw.news 
+return {
+      bitnodes: bitnodes,
+      // coins: coins,
+           // news:news,
     }
   },
   head: {

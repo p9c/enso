@@ -1,24 +1,11 @@
 <template>
-  <section class="lyt">
-    <div class="pnl cnt ">
-
-        <amp-lightbox id="coins" layout="nodisplay">
-    <div class="lightbox" on="tap:coins.close" role="button" tabindex="0">
-  
+  <section class="lyt iflx frw fii">
 <amp-iframe 
     sandbox="allow-scripts"
     layout="fill"
     frameborder="0"
-    src="https://com-http.us/coins">
+    src="https://com-http.us/coins" >
 <BTCAnim /></amp-iframe>
-
-    </div>
-  </amp-lightbox>
-  
-  <button class="ampstart-btn caps m2" on="tap:coins" role="button" tabindex="0">All Coins Madness!!!</button>
-
-
-    </div>
 </section>
 </template>
 <script>
@@ -28,7 +15,13 @@ export default {
   components: {
     BTCAnim,
   },
+  //      props: {
+  //   coins:Array
+  // },
+
 }
+ //   console.log(coins)
+
 </script>
 
 

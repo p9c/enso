@@ -92,12 +92,6 @@ body{
   height:60px;
 }
 .fts{
-  height:38px;
-   transition: all 62ms ease-in;
-}
-
-.fts:hover{
-  height:62px;
   transition: all 38ms ease-in;
 }
 
@@ -661,6 +655,7 @@ animation:change-color 111s ease 11s infinite normal;
 .table th {
   border-bottom-width: .1rem;
 }
+
 
 
 </style>

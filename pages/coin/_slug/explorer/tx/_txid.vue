@@ -1,13 +1,10 @@
 <template>
   <AppShell currentPage="tx" :slug="slug" :name="name" >
-<AppNavContent selected option="explorer">
 <Tx  :slug="slug" :name="name"  :txid="txid"  /> 
-</AppNavContent>
   </AppShell>
 </template>
 <script>
 import axios from '@/plugins/axios'
-import AppNavContent from '@/components/elements/AppNavContent.vue'
 import Tx from '@/components/pages/Tx.vue'
 import AppShell from '@/components/AppShell.vue'
 export default {
@@ -15,7 +12,6 @@ export default {
 components: {
     Tx,
     AppShell,
-    AppNavContent,
   },
   async asyncData({ query, params, error }) {
     let [cn, lb] = await Promise.all([

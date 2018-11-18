@@ -2,7 +2,7 @@
   <section class="flx frw fwr fsc">
     
 <article v-for="(coin, slug) in bitnodes" :key="slug" class="flx pnl pnlbg fcl mar bitnode" amp-fx="fade-in">
-  <button :on="'tap:AMP.navigateTo(url=\'//' + slug + '.com-http.us/\')'" class="flx frw pnlhd">
+  <button :on="'tap:AMP.navigateTo(url=\'//' + coin.slug + '.com-http.us/\')'" class="flx frw pnlhd">
     <figure><amp-img layout="fixed" :src="'https://i.com-http.us/' +coin.slug+  '/32'" width="32px" height="32px" :alt="coin.name"/></figure>
       <h3 class="flx fii fjc fai">
         <!-- <amp-fit-text height="32px" layout="flex-item" min-font-size="20px">{{coin.name}}🚀</amp-fit-text> -->

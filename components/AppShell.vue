@@ -19,9 +19,6 @@
 <script>
 
 // import SiteTitleBar from '~/components/SiteTitleBar.vue'
-import AppNavBar from '~/components/elements/AppNavBar.vue'
-import AppNavButton from '~/components/elements/AppNavButton.vue'
-import AppNavContent from '~/components/elements/AppNavContent.vue'
 // import HeroImage from '~/components/HeroImage.vue'
 import CoinBgImage from '~/components/elements/CoinBgImage.vue'
 import axios from '~/plugins/axios'
@@ -34,10 +31,6 @@ import Explorer from '@/components/pages/Explorer.vue'
 
 export default {
   components: {
-    // SiteTitleBar,
-    AppNavBar,
-    AppNavButton,
-    AppNavContent,
     CoinBgImage,
     Header,
     Footer,
