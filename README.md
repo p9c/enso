@@ -1,4 +1,4 @@
-# amp-nuxt-trial
+# Ensō
 
 Building up an AMP demo using Nuxt. This is still very much a work in progress (not fully working).
 
